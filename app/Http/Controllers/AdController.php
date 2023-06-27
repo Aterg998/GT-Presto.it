@@ -16,15 +16,12 @@ class AdController extends Controller
 
     public function create()
     {
-        //
+        return view('ads.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreAdRequest $request)
     {
-        //
+        
     }
 
     /**

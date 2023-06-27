@@ -21,20 +21,7 @@ class AdController extends Controller
 
     public function store(StoreAdRequest $request)
     {
-        $path_image = 'https://cdn-img.moto.it/images/26440477/1000x/vespa-elettrica-red-2022-01.jpg';
-
-        if($request->hasFile('image') && $request->file('image')->isValid()) {
-            $path_image = $request->file('image')->store('public/images');
-        }
-
-        Ad::create([
-            'title' => $request->title,
-            'price' => $request->price,
-            'description' => $request->description,
-            'image' => $path_image
-        ]);
-
-        return redirect()->route('ads.index')->with('success', 'Annuncio inserito con successo!');
+        
     }
 
     public function show(Ad $ad)

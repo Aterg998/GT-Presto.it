@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('title');
             $table->float('price', 10, 2); //Colonna di prezzo. Float = numero con decimali, primo numero = cifre prima della virgola, secondo numero = cifre dopo la virgola
             $table->string('description');
-            $table->file('image');
+            $table->file('image')->nullable();
             $table->timestamps();
         });
     }

@@ -7,6 +7,11 @@ use Livewire\Component;
 
 class AdIndexList extends Component
 {
+    public function destroy(Ad $ad){
+        $ad->delete();
+        session()->flash('success', 'Annuncio eliminato con successo!');
+    }
+    
     public function render()
     {
         $ads = Ad::all();

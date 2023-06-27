@@ -8,6 +8,8 @@
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 
+    @livewireStyles
+
 </head>
 <body class= "template">
     <x-navbar/>
@@ -15,5 +17,7 @@
         {{$slot}}
 
     <x-footer/>
+
+    @livewireScripts
 </body>
 </html>

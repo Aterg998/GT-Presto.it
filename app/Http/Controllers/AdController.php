@@ -8,17 +8,12 @@ use App\Http\Requests\UpdateAdRequest;
 
 class AdController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $ads = Ad::all();
+        return view('ads.index', compact('ads'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //

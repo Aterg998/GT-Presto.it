@@ -6,20 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->float('price', 10, 2); //Colonna di prezzo. Float = numero con decimali, primo numero = cifre prima della virgola, secondo numero = cifre dopo la virgola
+            $table->string('description');
+            $table->file('image');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('ads');

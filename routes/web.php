@@ -14,3 +14,5 @@ Route::get('/annunci/{ad}/dettagli', [AdController::class, 'show'])->name('ads.s
 Route::get('/annunci/{ad}/modifica', [AdController::class, 'edit'])->name('ads.edit');
 Route::put('/annunci/{ad}', [AdController::class, 'update'])->name('ads.update');
 Route::delete('/annunci/{ad}', [AdController::class, 'destroy'])->name('ads.delete');
+
+

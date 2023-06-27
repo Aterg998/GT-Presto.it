@@ -1,0 +1,1 @@
+<livewire:ad-index-list />

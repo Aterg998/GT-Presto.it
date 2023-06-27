@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
-    protected $fillable = ['title', 'price', 'description', 'image'];
+    protected $fillable = ['title', 'price', 'description', 'image', 'category_id'];
 
     use HasFactory;
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }

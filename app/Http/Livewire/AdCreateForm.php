@@ -15,6 +15,7 @@ class AdCreateForm extends Component
         'title' => 'required|min:10',
         'price' => 'required',
         'description' => 'required|min:10|max:500',
+        'category_id' => 'required'
     ];
 
     public function updated($propertyName){
@@ -38,10 +39,11 @@ class AdCreateForm extends Component
             'price' => $this->price,
             'description' => $this->description,
             'image' => $this->image,
+            'category_id' => $this->category_id
         ]);
 
         session()->flash('success', 'Annuncio inserito con successo!');
-        $this->reset(['title', 'price', 'description', 'image']);
+        $this->reset(['title', 'price', 'description', 'image', 'category_id']);
     }
 
     public function render()

@@ -28,13 +28,15 @@ class AdController extends Controller
         }
 
         Ad::create([
-            ''
+            'title' => $request->title,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image' => $path_image
         ]);
+
+        return redirect()->route('ads.index')->with('success', 'Annuncio inserito con successo!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Ad $ad)
     {
         //

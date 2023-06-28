@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'css-template/main.css';
 
 .template {
     background-color: rgba(147, 169, 150, 0.5);

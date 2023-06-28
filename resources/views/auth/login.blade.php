@@ -17,6 +17,16 @@
                                 <div class="text-center">
                                     <img src="https://images.pexels.com/photos/9496720/pexels-photo-9496720.jpeg" alt="Andrew Jones" class="img-fluid rounded-circle" width="132" height="132">
                                 </div>
+
+                                @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                                 <form method="post" action={{route('login')}}>
                                     @csrf
                                     @method('POST')

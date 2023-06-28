@@ -15,16 +15,23 @@
                                 <div class="text-center">
                                     <img src="https://images.pexels.com/photos/9496721/pexels-photo-9496721.jpeg" alt="Andrew Jones" class="img-fluid rounded-circle" width="132" height="132">
                                 </div>
+
+                                @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
                                 <form method="post" action={{route('register')}}>
                                     @csrf
                                     @method('POST')
                                     <div class="form-group">
                                         <label>Username</label>
-                                        <input class="form-control form-control-lg" type="text" name="name" >
+                                        <input class="form-control form-control-lg" type="text" name="name" value="{{old('name')}}" >
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input class="form-control form-control-lg" type="email" name="email" >
+                                        <input class="form-control form-control-lg" type="email" name="email" value="{{old('email')}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>

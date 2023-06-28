@@ -5,7 +5,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 //Route della homepage
-Route::get('/', function () {return view('homepage');});
+Route::get('/', function () {return view('homepage');})->name('homepage');
 
 //Routes degli annunci
 Route::get('/annunci', [AdController::class, 'index'])->name('ads.index');

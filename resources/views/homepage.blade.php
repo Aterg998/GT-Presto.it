@@ -5,7 +5,7 @@
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Vendi  e cerca tutto <span style="color: #006243">Presto</span></h2>
-          <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+          <p>Su Presto compri e vendi di tutto, a distanza e in tutta sicurezza. Con l'usato, ci guadagni tu e ci guadagna anche il Pianeta.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Inizia a vendere</a>
           </div>
@@ -26,28 +26,6 @@
               <h4 class="title"><a href="" class="stretched-link">Lorem Ipsum</a></h4>
             </div>
           </div><!--End Icon Box -->
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-gem"></i></div>
-              <h4 class="title"><a href="" class="stretched-link">Sed ut perspiciatis</a></h4>
-            </div>
-          </div><!--End Icon Box -->
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-geo-alt"></i></div>
-              <h4 class="title"><a href="" class="stretched-link">Magni Dolores</a></h4>
-            </div>
-          </div><!--End Icon Box -->
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-command"></i></div>
-              <h4 class="title"><a href="" class="stretched-link">Nemo Enim</a></h4>
-            </div>
-          </div><!--End Icon Box -->
-
         </div>
       </div>
     </div>

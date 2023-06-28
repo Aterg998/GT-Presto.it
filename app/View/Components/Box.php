@@ -23,6 +23,6 @@ class Box extends Component
     public function render(): View|Closure|string
     {
         $categories = Category::all();
-        return view('components.box', compact('categories'));
+        return view('components.box', ['categories'=>$categories]);
     }
 }

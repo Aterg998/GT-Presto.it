@@ -29,11 +29,16 @@
                                         <input class="form-control form-control-lg" type="password" name="password">
                                        
                                     </div>
-                                    
-                                    <div class="text-center mt-3">
+                                    <div class="row"> 
+                                    <div class="text-center mt-3 col">
                                       
                                         <button type="submit" class="btn btn-lg btn-primary">Accedi</button>
                                     </div>
+                                    <div class="text-center mt-3 col">
+                                      
+                                        <a class="btn btn-lg btn-primary" href="{{route('register')}}">Registrati</a>
+                                    </div>
+                                </div>
                                 </form>
                             </div>
                         </div>

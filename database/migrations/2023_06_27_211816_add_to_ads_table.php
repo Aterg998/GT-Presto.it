@@ -11,6 +11,8 @@ return new class extends Migration
         Schema::table('ads', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id')->after('image');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('user_id')->after('category_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -19,6 +21,8 @@ return new class extends Migration
         Schema::table('ads', function (Blueprint $table) {
             $table->dropColumn('category_id');
             $table->dropForeign(['category_id']);
+            $table->dropColumn('user_id');
+            $table->dropForeign(['user_id']);
         });
     }
 };

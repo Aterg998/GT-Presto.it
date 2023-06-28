@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.cdnfonts.com/css/chelsey" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Presto.it</title>
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 

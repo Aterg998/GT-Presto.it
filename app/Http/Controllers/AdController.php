@@ -19,28 +19,18 @@ class AdController extends Controller
         return view('ads.create');
     }
 
-    public function store(StoreAdRequest $request)
-    {
-        
-    }
-
     public function show(Ad $ad)
     {
-        //
+        return view('ads.show', compact('ad'));
     }
 
     public function edit(Ad $ad)
     {
-        //
+        return view('ads.edit', compact('ad'));
     }
 
-    public function update(UpdateAdRequest $request, Ad $ad)
+    public function __construct()
     {
-        //
-    }
-
-    public function destroy(Ad $ad)
-    {
-        //
+        $this->middleware('auth');
     }
 }

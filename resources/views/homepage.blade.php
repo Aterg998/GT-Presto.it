@@ -1,7 +1,7 @@
 <x-main>
       <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
-    <div class="container position-relative">
+    <div class="container position-relative bg-image-hero">
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Vendi  e cerca tutto <span style="color: #006243;" class="presto">Presto</span></h2>

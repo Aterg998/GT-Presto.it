@@ -9,6 +9,9 @@
     background-color: rgba(147, 169, 150, 0.0);
 }
 
+.bg-image-hero {
+ background-image: url('public/img/Ecommerce.png');
+}
 .accenti {
     /* background-color: #006866; */
     /* background-color: #009874; */

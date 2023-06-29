@@ -1,24 +1,30 @@
 <x-main>
 
+     
+          
+    <!-- ======= Annunci Section ======= -->
+ <section id="portfolio" class="portfolio sections-bg">
+  <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-        <livewire:ad-index-list />
-        <h2>Articoli</h2>
-        <p>non so cosa scrivere</p>
-      </div>
 
-      @foreach ($ads as $ad )
-          
-    
-      <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-        <div class="portfolio-wrap">
-          <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="{{route('ads.show')}}" title="title">{{$ad->title}}</a></h4>
-            <p>Prezzo {{$ad->price}}</p>
-            <p>{{$ad->description}}</p>
-          </div>
-        </div>
-      </div>
-      @endforeach
+      <livewire:ad-index-list />
+
+      <h2>Articoli</h2>
+      <p>non so cosa scrivere</p>    
+    </div>
+
+    <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+    {{--   <div>
+        <ul class="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">App</li>
+          <li data-filter=".filter-product">Product</li>
+          <li data-filter=".filter-branding">Branding</li>
+          <li data-filter=".filter-books">Books</li>
+        </ul><!-- End Portfolio Filters -->
+      </div> --}}
+
+    <x-card> </x-card>
 </x-main>

@@ -18,7 +18,7 @@
 
 {{-- seconda navbar con solo categorie --}}
   <nav class="py-2 template-navbar">
-    <div class="container d-flex">
+    <div class="container d-flex justify-content-center">
       <ul class="nav justify-content-evenly">
         @foreach ($categories as $category)
         <li class="nav-item nav2"

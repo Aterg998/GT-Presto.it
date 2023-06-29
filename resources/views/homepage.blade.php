@@ -14,13 +14,21 @@
           <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
         </div>
       </div>
+    </div> 
+
     </div>
-
-    @foreach ($categories as $category)
-      <x-box>{{$category->name}}</x-box>
-    @endforeach
-
+    <div class=" d-flex justify-content-center">
+      <div class="container row">
+        @foreach ($categories as $category)
+        <span class="col-4">
+          <button class="btn m-3 border rounded-4 homepage-box">
+            <h4 class="fs-4">{{$category->name}}</h4>
+          </button>
+        </span>
+        @endforeach
+      </div>
     </div>
   </section>
+  
   <!-- End Hero Section -->
 </x-main>

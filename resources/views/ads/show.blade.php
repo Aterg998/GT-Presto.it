@@ -1,11 +1,11 @@
 <x-main>
-    <div id="carouselExampleIndicators" class="carousel slide">
+    <div id="carouselExampleIndicators" class="carousel slide d-flex justify-content-center">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner" style="height: 400px">
+        <div class="carousel-inner" style="height: 30%; width: 30%">
           <div class="carousel-item active">
             <img src="https://picsum.photos/id/237/300/300" class="d-block w-100" alt="...">
           </div>

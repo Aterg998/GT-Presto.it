@@ -21,7 +21,11 @@
     <div class="container d-flex">
       <ul class="nav justify-content-evenly">
         @foreach ($categories as $category)
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 text-white" aria-current="page">{{$category->name}} |</a></li>
+        <li class="nav-item nav2"
+        @if ($category->id == 1)
+          style="
+          border-left-style: none;"
+        @endif><a href="#" class="nav-link link-body-emphasis text-white" aria-current="page">{{$category->name}}</a></li>
         @endforeach
       </ul>
     </div>

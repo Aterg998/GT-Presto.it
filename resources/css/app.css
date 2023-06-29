@@ -37,3 +37,10 @@
      color:#006243 !important;
 } 
 
+.nav2 {
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-width: 1px;
+}

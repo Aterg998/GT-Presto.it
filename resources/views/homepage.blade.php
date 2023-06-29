@@ -7,7 +7,7 @@
           <h2>Vendi  e cerca tutto <span style="color: #006243">Presto</span></h2>
           <p>Su Presto compri e vendi di tutto, a distanza e in tutta sicurezza. Con l'usato, ci guadagni tu e ci guadagna anche il Pianeta.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Inizia a vendere</a>
+            <a href="{{route('ads.create')}}" class="btn-get-started">Inizia a vendere</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">

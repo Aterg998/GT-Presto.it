@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 //Route della homepage
-Route::get('/', function () {return view('homepage');})->name('homepage');
+Route::get('/', function () {
+    $categories = Category::all();
+    return view('homepage', ['categories' => $categories]);
+})->name('homepage');
 
 //Routes degli annunci
 Route::get('/annunci', [AdController::class, 'index'])->name('ads.index');

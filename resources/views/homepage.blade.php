@@ -16,7 +16,9 @@
       </div>
     </div>
 
-  <x-box></x-box>
+    @foreach ($categories as $category)
+      <x-box>{{$category->name}}</x-box>
+    @endforeach
 
     </div>
   </section>

@@ -2,28 +2,25 @@
 
 namespace App\View\Components;
 
-use App\Models\Ad;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Card extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $title;
+    public $price;
+    public $description;
+
+    public function __construct($title, $price, $description)
     {
-        //
+        $this->title = $title;
+        $this->price = $price;
+        $this->description = $description;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
-
-        $ads = Ad::all();
-        return view('components.card', compact('ads'));
+        return view('components.card');
     }
 }

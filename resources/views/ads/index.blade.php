@@ -25,6 +25,4 @@
           <li data-filter=".filter-books">Books</li>
         </ul><!-- End Portfolio Filters -->
       </div> --}}
-
-    <x-card> </x-card>
 </x-main>

@@ -1,7 +1,7 @@
 <x-main>
       <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
-    <div class="container position-relative bg-image-hero">
+    <div class="container position-relative">
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Vendi  e cerca tutto <span style="color: #006243;" class="presto">Presto</span></h2>
@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
-          <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+          <img src="{{asset('storage\img\Ecommerce.png')}}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
         </div>
       </div>
     </div> 
@@ -22,13 +22,6 @@
   </section>
 
   <!-- End Hero Section -->
-
-
-  <!-- card annunci -->
-  @foreach ($ads as $ad) 
-  <x-card :title="$ad->title" :price="$ad->price" :description="$ad->description"/>
-  @endforeach
-
 
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">

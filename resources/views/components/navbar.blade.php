@@ -37,7 +37,7 @@
             <span class="mx-3">Ciao, {{Auth::user()->name}}</span>
             <form action="{{route('logout')}}" method="POST">
                 @csrf
-                <button class="btn btn-dark" onclick="event.preventDefault(); this.closest('form').submit();">Logout</button>
+                <button class="btn btn-presto shadow" onclick="event.preventDefault(); this.closest('form').submit();">Logout</button>
             </form>
                 @else
                 <a class="btn accenti mx-1" href='{{Route('login')}}'>Accedi</a>

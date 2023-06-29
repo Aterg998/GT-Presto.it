@@ -16,6 +16,18 @@
 <body class= "template">
     <x-navbar/>
 
+{{-- seconda navbar con solo categorie --}}
+  <nav class="py-2 template-navbar">
+    <div class="container d-flex">
+      <ul class="nav justify-content-evenly">
+        @foreach ($categories as $category)
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 text-white" aria-current="page">{{$category->name}} |</a></li>
+        @endforeach
+      </ul>
+    </div>
+    </div>
+  </nav>
+
         {{$slot}}
 
     <x-footer/>

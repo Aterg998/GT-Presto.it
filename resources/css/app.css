@@ -5,6 +5,10 @@
     background-color: rgba(147, 169, 150, 0.5);
 }
 
+.template-navbar {
+    background-color: rgba(147, 169, 150, 0.0);
+}
+
 .accenti {
     /* background-color: #006866; */
     /* background-color: #009874; */
@@ -27,6 +31,7 @@
     font-family:'Chelsey', sans-serif;
     text-decoration: none;
 }
+
 
  .nav-link:hover {
      color:#006243 !important;

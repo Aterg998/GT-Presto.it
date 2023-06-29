@@ -24,6 +24,9 @@
   <!-- End Hero Section -->
 
 
+  <!-- card annunci -->
+
+  <x-card> </x-card>
 
 
   <!-- ======= Testimonials Section ======= -->

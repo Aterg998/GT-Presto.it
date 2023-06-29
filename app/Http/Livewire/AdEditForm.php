@@ -3,11 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Models\Ad;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class AdEditForm extends Component
 {
-    public $title, $price, $description, $image; 
+    public $title, $price, $description, $image, $category_id, $user_id; 
 
     public Ad $ad;
 
@@ -15,6 +17,7 @@ class AdEditForm extends Component
         'title' => 'required|min:10',
         'price' => 'required',
         'description' => 'required|min:10|max:500',
+        'category_id' => 'required'
     ];
 
     public function mount()
@@ -23,6 +26,8 @@ class AdEditForm extends Component
         $this->price = $this->ad->price;
         $this->description = $this->ad->description;
         $this->image = $this->ad->image;
+        $this->category_id = $this->ad->category_id;
+        $this->user_id = $this->user_id;
     }
 
     public function updated($propertyName){
@@ -40,6 +45,8 @@ class AdEditForm extends Component
             'price' => $this->price,
             'description' => $this->description,
             'image' => $this->image,
+            'category_id' => $this->category_id,
+            'user_id' => $this->user_id=Auth::user()->id
         ]);
 
         session()->flash('success', 'Annuncio modificato con successo!');
@@ -48,6 +55,7 @@ class AdEditForm extends Component
 
     public function render()
     {
-        return view('livewire.ad-edit-form');
+        $categories = Category::all();
+        return view('livewire.ad-edit-form',compact('categories'));
     }
 }

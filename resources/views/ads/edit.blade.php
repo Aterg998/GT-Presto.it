@@ -1,5 +1,6 @@
 <x-main>
+    
     <div class="container w-40">
-    <livewire:ad-create-form />
+    <livewire:ad-edit-form :ad="$ad"/>
 </div>
 </x-main>

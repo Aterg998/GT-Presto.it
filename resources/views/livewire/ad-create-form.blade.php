@@ -12,7 +12,7 @@
         </div>
     @endif
 
-
+    <h2>Crea il tuo annuncio</h2>
 
     <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>

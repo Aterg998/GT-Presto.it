@@ -7,9 +7,12 @@ use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class AdCreateForm extends Component
 {
+
+    use WithFileUploads;
 
     public $title, $price, $description, $image, $category_id, $user_id;
 
@@ -40,7 +43,7 @@ class AdCreateForm extends Component
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'image' => $this->image,
+            'image' => $this->image->store('ads_image'),
             'category_id' => $this->category_id,
             'user_id' => $this->user_id=Auth::user()->id
         ]);

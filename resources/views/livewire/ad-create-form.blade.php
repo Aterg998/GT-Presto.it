@@ -12,45 +12,55 @@
         </div>
     @endif
 
-    <h2>Crea il tuo annuncio</h2>
-
-    <div class="mb-3">
-        <label for="title" class="form-label">Titolo</label>
-        <input type="text" class="form-control" id="title" wire:model="title">
-        @error('title')
-            <span class="error text-danger">{{ $message }}</span>
-        @enderror
-
-        <div class="mb-3">
+    <div class="text-center font-weight-bold accenti m-5">
+        <h2>Crea il tuo annuncio</h2>
+    </div>
+    <div class="form-row">
+        <div class=" form-group">
+            <label for="title" class="form-label">Titolo</label>
+            <input type="text" class="form-control" id="title" wire:model="title">
+            @error('title')
+                <span class="error text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" min="0" value="0" step=".01" class="form-control" id="price" wire:model="price">
+            <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
+                wire:model="price">
             @error('price')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea rows="5" class="form-control" id="description" wire:model="description"></textarea>
+            @error('description')
+                <span class="error text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class=" form-group">
+            <label for="description" class="form-label">Categoria</label>
+            <select class="form-control" id="category_id" wire:model="category_id">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
 
-            <div class="mb-3">
-                <label for="description" class="form-label">Descrizione</label>
-                <textarea rows="5" class="form-control" id="description" wire:model="description"></textarea>
-                @error('description')
-                    <span class="error text-danger">{{ $message }}</span>
-                @enderror
+            </select>
+        </div>
 
-                <div class="form-floating mb-3">
-                    <select class="form-control" id="category_id" wire:model="category_id">
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endforeach
+        <div class="form-group">
+            <label for="image" class="form-label">Immagine dell'articolo</label>
 
+            <input class="form-control" id="image" wire:model="image" type="file">
+            @error('image')
+                <span class="error text-danger">{{ $message }}</span>
+            @enderror
+        </div>
 
-                        <div class="mb-3">
-                            <label for="image">Immagine dell'articolo</label>
-                            <input class="form-control" id="image" wire:model="image" type="file">
-                        </div>
-                        @error('image')
-                            <span class="error text-danger">{{ $message }}</span>
-                        @enderror
+    </div>
+    <br>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Salva</button>
 
-
-
-                        <button type="submit" class="btn btn-primary">Salva</button>
+    </div>
 </form>

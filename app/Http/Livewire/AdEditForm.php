@@ -6,9 +6,13 @@ use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class AdEditForm extends Component
 {
+
+    use WithFileUploads; 
+
     public $title, $price, $description, $image, $category_id, $user_id; 
 
     public Ad $ad;

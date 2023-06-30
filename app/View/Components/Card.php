@@ -8,15 +8,11 @@ use Illuminate\View\Component;
 
 class Card extends Component
 {
-    public $title;
-    public $price;
-    public $description;
+    public $ad;
 
-    public function __construct($title, $price, $description)
+    public function __construct($ad)
     {
-        $this->title = $title;
-        $this->price = $price;
-        $this->description = $description;
+        $this->ad = $ad;
     }
 
     public function render(): View|Closure|string

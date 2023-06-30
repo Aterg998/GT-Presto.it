@@ -1,3 +1,3 @@
 @foreach ($ads as $ad)
-<x-card :title="$ad->title" :price="$ad->price" :description="$ad->description"/>
+    <x-card :ad="$ad"/>
 @endforeach

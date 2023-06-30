@@ -17,7 +17,7 @@ class AdCreateForm extends Component
     public $title, $price, $description, $image, $category_id, $user_id;
 
     protected $rules = [
-        'title' => 'required|min:10',
+        'title' => 'required|min:3',
         'price' => 'required',
         'description' => 'required|min:10|max:500',
         'category_id' => 'required'
@@ -33,17 +33,11 @@ class AdCreateForm extends Component
         
         $this->validate();
 
-        // $path_image = 'https://cdn-img.moto.it/images/26440477/1000x/vespa-elettrica-red-2022-01.jpg';
-
-        /* if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $path_image = $request->file('image')->store('public/images');
-        } */
-
         Ad::create([
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'image' => $this->image->store('ads_image'),
+            'image' => $this->image->store('public/img'),
             'category_id' => $this->category_id,
             'user_id' => $this->user_id=Auth::user()->id
         ]);

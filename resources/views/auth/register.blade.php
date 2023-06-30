@@ -47,7 +47,7 @@
                                         <input class="form-control form-control-lg" type="password" name="password_confirmation" >
                                     <div class="text-center mt-3">
                                       
-                                        <button type="submit" class="btn btn-lg btn-primary">Accedi</button>
+                                        <button type="submit" class="btn btn-presto btn btn-lg btn-primary">Accedi</button>
                                     </div>
                                 </form>
                             </div>

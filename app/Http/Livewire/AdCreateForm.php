@@ -30,14 +30,15 @@ class AdCreateForm extends Component
 
     public function store()
     {
-        
+        $placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
+
         $this->validate();
 
         Ad::create([
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'image' => $this->image->store('public/img'),
+            'image' => $placeholder,
             'category_id' => $this->category_id,
             'user_id' => $this->user_id=Auth::user()->id
         ]);

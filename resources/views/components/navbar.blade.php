@@ -1,6 +1,5 @@
-<div>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container row">
+    <div class="container-fluid row">
         <div class="container accenti col">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,4 +46,3 @@
         </div>
     </div>
 </nav>
-</div>

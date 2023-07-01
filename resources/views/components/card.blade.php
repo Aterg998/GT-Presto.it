@@ -4,11 +4,11 @@
       <a href="{{route('ads.show', $ad->id)}}" data-gallery="portfolio-gallery-app" class="glightbox">
         <img src="{{$ad->image}}" class="img-fluid" style="width: 300px; height: 300px" alt="">
       </a>
-      <div class="portfolio-info">
-        <h4><a href="{{route('ads.show', $ad->id)}}" title="title">{{$ad->title}}</a></h4>
-        <p>Prezzo: {{$ad->price}}</p>
-        <p>Categoria: {{$ad->category->name}}</p>
-        <p>{{$ad->description}}</p>
+      <div class="portfolio-info mt-3">
+        <h4><a href="{{route('ads.show', $ad->id)}}" title="title" class="accenti">{{$ad->title}}</a></h4>
+        <p class="text-black"> <span class="accenti">Prezzo:</span> {{$ad->price}}</p>
+        <p class="text-black"><span class="accenti">Categoria:</span> {{$ad->category->name}}</p>
+        <p class="text-black">{{$ad->description}}</p>
       </div>
     </div>
   </div>

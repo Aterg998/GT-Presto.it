@@ -60,7 +60,7 @@
     </div>
     <br>
     <div class="text-center">
-        <button type="submit" class="btn btn-primary">Salva</button>
+        <button type="submit" class="btn btn-presto">Salva</button>
 
     </div>
 </form>

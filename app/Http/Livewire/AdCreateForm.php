@@ -45,6 +45,7 @@ class AdCreateForm extends Component
 
         session()->flash('success', 'Annuncio inserito con successo!');
         $this->reset(['title', 'price', 'description', 'image', 'category_id']);
+        return view('livewire.ad-index-list', compact('categories'));
     }
 
     public function render()

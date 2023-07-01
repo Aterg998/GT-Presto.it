@@ -6,7 +6,7 @@
 }
 
 .template-navbar {
-    background-color: rgba(147, 169, 150, 0.0);
+    background-color: #006243;
 }
 
 .accenti {
@@ -43,7 +43,7 @@
     border-bottom-style: none;
     border-left-style: solid;
     border-width: 1px;
-    color:#006243;
+    color:#D2360F;
 }
 
 .btn-presto {
@@ -54,4 +54,14 @@
 .btn-presto:hover {
     color: white;
     background-color: #1c7659;
+}
+
+.latest{
+    box-sizing: content-box;
+    padding: 10px;
+    margin: 10px 10px;
+    box-shadow: 0px 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background:var(--color-primary);
+    border-radius: 10px;
 }

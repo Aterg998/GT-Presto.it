@@ -14,7 +14,7 @@ class PageController extends Controller
        /*  $ads = Ad::all(); */
     
 
-        $ads = Ad::orderBy('created_at','desc')->take(3)->get();
+        $ads = Ad::orderBy('created_at','desc')->take(6)->get();
 
         return view('homepage', [
             'categories' => $categories,

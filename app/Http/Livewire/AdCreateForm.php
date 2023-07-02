@@ -27,12 +27,18 @@ class AdCreateForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function render()
+    {
+        return view('livewire.ad-create-form');
+    }
 
     public function store()
     {
         $placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
 
         $this->validate();
+
+        $categories = Category::all();
 
         Ad::create([
             'title' => $this->title,
@@ -46,11 +52,5 @@ class AdCreateForm extends Component
         session()->flash('success', 'Annuncio inserito con successo!');
         $this->reset(['title', 'price', 'description', 'image', 'category_id']);
         return view('livewire.ad-index-list', compact('categories'));
-    }
-
-    public function render()
-    {
-        $categories = Category::all();
-        return view('livewire.ad-create-form', compact('categories'));
     }
 }

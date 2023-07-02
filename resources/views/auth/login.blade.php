@@ -1,12 +1,12 @@
 <x-main> 
-    <div class="container h-100">
+    <div class="container h-100 m-5">
         <div class="row h-100">
             <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
                 <div class="d-table-cell align-middle">
 
                     <div class="text-center mt-4">
                         <h1 class="h2">Bentornato</h1>
-                        <p class="lead">
+                        <p class="text-black">
                             Accedi al tuo account per continuare
                         </p>
                     </div>

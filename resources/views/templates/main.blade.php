@@ -33,8 +33,10 @@
 
         {{$slot}}
 
-    <x-footer/>
+   
 
     @livewireScripts
+   
 </body>
+<x-footer/>
 </html>

@@ -1,7 +1,5 @@
 <x-main>
-
-     
-          
+    
     <!-- ======= Annunci Section ======= -->
  <section id="portfolio" class="portfolio sections-bg">
   <div class="container" data-aos="fade-up">
@@ -23,4 +21,5 @@
           <li data-filter=".filter-books">Books</li>
         </ul><!-- End Portfolio Filters -->
       </div> --}}
+      
 </x-main>

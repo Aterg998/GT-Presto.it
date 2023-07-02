@@ -15,22 +15,7 @@
 </head>
 <body class= "template">
     <x-navbar/>
-
-{{-- seconda navbar con solo categorie --}}
-  <nav class="py-2 template-navbar">
-    <div class="container d-flex justify-content-center">
-      <ul class="nav justify-content-evenly">
-        @foreach ($categories as $category)
-        <li class="nav-item nav2"
-        @if ($category->id == 1)
-          style="border-left-style: none;"
-        @endif><a href="#" class="nav-link link-body-emphasis text-white" aria-current="page">{{$category->name}}</a></li>
-        @endforeach
-      </ul>
-    </div>
-    </div>
-  </nav>
-
+    
         {{$slot}}
 
    

@@ -21,7 +21,7 @@
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
                                 <li>
-                                    <a class="dropdown-item" href="{{ Route('ads.index') }}">{{ $category->name }}</a>
+                                    <a class="dropdown-item" href="{{Route('ads.index', ['category' => $category->id])}}">{{ $category->name }}</a>
                                 </li>
                             @endforeach
                             {{--  dobbiamo inserire il filtro delle categorie nella route --}}
@@ -31,6 +31,8 @@
 
             </div>
         </div>
+        
+        
         
         <div class="d-flex justify-content-end col align-items-center">
             @auth
@@ -44,5 +46,19 @@
                 <a class="btn btn-presto accenti mx-2" href='{{Route('register')}}'>Registrati</a>
             @endauth
         </div>
+    </div>
+    
+</nav>
+
+{{-- seconda navbar con solo categorie --}}
+<nav class="py-2 template-navbar">
+    <div class="container d-flex justify-content-center">
+        <ul class="nav justify-content-evenly">
+            @foreach ($categories as $category)
+            <li class="nav-item nav2" @if ($category->id == 1) style="border-left-style: none;"@endif>
+                <a href="{{Route('ads.index', ['category' => strtolower(str_replace(' ', '', $category->name))])}}" class="nav-link link-body-emphasis text-white" aria-current="page">{{$category->name}}</a>
+            </li>
+            @endforeach
+        </ul>
     </div>
 </nav>

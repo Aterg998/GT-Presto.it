@@ -22,5 +22,5 @@
           <li data-filter=".filter-books">Books</li>
         </ul><!-- End Portfolio Filters -->
       </div> --}}
-      
+    </section>
 </x-main>

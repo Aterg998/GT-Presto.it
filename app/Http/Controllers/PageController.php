@@ -20,4 +20,11 @@ class PageController extends Controller
             'categories' => $categories,
             'ads' => $ads]);
     }
+
+    public function searchAds (Request $request)
+    {
+        $ads = Ad::search($request->searched)->paginate(10);
+
+        return view('ads.index', compact('ads'));
+    }
 }

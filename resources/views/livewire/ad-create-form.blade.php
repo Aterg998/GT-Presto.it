@@ -19,7 +19,7 @@
     <div class="form-row">
         <div class=" form-group">
             <label for="title" class="form-label text-black">Titolo</label>
-            <input type="text" class="form-control" id="title" wire:model="title">
+            <input type="text" class="form-control" id="title" wire:model="title" value="{{old('title')}}">
             @error('title')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
@@ -27,21 +27,22 @@
         <div class="form-group">
             <label for="price" class="form-label text-black">Prezzo</label>
             <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
-                wire:model="price">
+                wire:model="price" value="{{old('price')}}">
             @error('price')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
             <label for="description" class="form-label text-black">Descrizione</label>
-            <textarea rows="5" class="form-control" id="description" wire:model="description"></textarea>
+            <textarea rows="5" class="form-control" id="description" wire:model="description" value="{{old('description')}}"></textarea>
             @error('description')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class=" form-group">
             <label for="description" class="form-label text-black">Categoria</label>
-            <select class="form-control" id="category_id" wire:model="category_id">
+            <select class="form-control" id="category_id" wire:model="category_id" value="{{old('category_id')}} placeholder="Ciao">
+                <option value="">Seleziona la categoria...</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach

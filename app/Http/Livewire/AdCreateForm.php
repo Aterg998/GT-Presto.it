@@ -29,7 +29,8 @@ class AdCreateForm extends Component
 
     public function render()
     {
-        return view('livewire.ad-create-form');
+        $categories = Category::all();
+        return view('livewire.ad-create-form', compact('categories'));
     }
 
     public function store()

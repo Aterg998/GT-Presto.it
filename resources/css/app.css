@@ -65,3 +65,21 @@
     background:var(--color-primary);
     border-radius: 10px;
 }
+
+.home-button {
+    opacity: 0;
+    position: relative;
+    bottom: -50px; /* Sposta l'elemento fuori dalla schermata all'inizio */
+    animation: fadein 1s ease-out forwards; /* Imposta l'animazione */
+  }
+
+@keyframes fadein {
+0% {
+    opacity: 0;
+    bottom: -50px; /* Posizione iniziale fuori dalla schermata */
+}
+100% {
+    opacity: 1;
+    bottom: 0; /* Posizione finale all'interno della schermata */
+}
+}

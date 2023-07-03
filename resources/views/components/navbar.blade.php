@@ -13,6 +13,9 @@
                     <li class="nav-item">
                         <a class="nav-link fw-bolder" href="{{ Route('ads.index') }}">Annunci</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" href="{{ Route('ads.create') }}">Crea Annuncio</a>
+                    </li>
                     <li class="nav-item dropdown d-block d-md-none">
                         <a class="nav-link dropdown-toggle fw-bolder" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

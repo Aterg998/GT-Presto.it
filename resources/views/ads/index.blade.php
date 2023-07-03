@@ -7,7 +7,21 @@
     <div class="section-header">
       <h2>Articoli</h2>
       
-      <livewire:ad-index-list/>
+      {{-- <livewire:ad-index-list/> --}}
+
+      <div class="container row">
+        @forelse ($ads as $ad)
+        <span class="col-12 col-md-4">
+            <x-card :ad="$ad"/>
+        </span>
+        @empty
+        <div class="col-12">
+            <div class="alert alert-warning py-3 shadow">
+                <p class="lead">Non ci sono annunci per questa ricrca. Prova a cambiare i parametri.</p>
+            </div>
+        </div>
+        @endforelse
+      </div>
       
     </div>
 

@@ -5,8 +5,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse nav-text">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse nav-text ">
+                <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-item mx-4">
                         <a class="accenti mx-2 presto fs-2" href="{{ Route('homepage') }}">Presto.it</a>
                     </li>
@@ -14,8 +14,12 @@
                         <a class="nav-link fw-bolder" href="{{ Route('ads.index') }}">Annunci</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bolder" href="{{ Route('ads.create') }}">Crea Annuncio</a>
+                        <a class="nav-link fw-bolder" href="{{ Route('ads.create') }}">Vendi</a>
                     </li>
+                    <form action="{{route('ads.search')}}" method="GET" class="d-flex ms-5">
+                        <input type="search" name="searched" class="form-control me-2" placeholder="Cerca" aria-label="Cerca">
+                        <button class="btn btn-presto" type="submit">Cerca</button>
+                    </form>
                     <li class="nav-item dropdown d-block d-md-none">
                         <a class="nav-link dropdown-toggle fw-bolder" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

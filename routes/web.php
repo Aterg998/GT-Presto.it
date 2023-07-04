@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
 
 //Route della homepage
@@ -27,3 +28,11 @@ Route::get('/annunci/{ad}/modifica', [AdController::class, 'edit'])->name('ads.e
 // Route::delete('/categorie/{category}', [CategoryController::class, 'destroy'])->name('categories.delete');
 
 Route::get('/ricerca/annuncio', [PageController::class, 'searchAds'])->name('ads.search');
+
+// Home Revisore
+Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+
+// Accetta Annuncio
+Route::patch('/accetta/annuncio/{ad}', [RevisorController::class, 'acceptAd'])->name('revisor.accept_ad');
+// Rifiuta Annuncio
+Route::patch('/rifiuta/annuncio/{ad}', [RevisorController::class, 'rejectAd'])->name('revisor.reject_ad');

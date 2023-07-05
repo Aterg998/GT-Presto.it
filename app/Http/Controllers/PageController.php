@@ -11,11 +11,11 @@ class PageController extends Controller
     public function homepage()
     {
         $categories = Category::all();
-       /*  $ads = Ad::all(); */
+      
     
 
-        //$ads = Ad::orderBy('created_at','desc')->take(6)->get();
-        $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
+        
+        $ads = Ad::where('is_accepted', true)->take(6)->get()->sortByDesc('created_at');
 
         return view('homepage', [
             'categories' => $categories,

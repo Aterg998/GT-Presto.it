@@ -30,9 +30,9 @@ Route::get('/annunci/{ad}/modifica', [AdController::class, 'edit'])->name('ads.e
 Route::get('/ricerca/annuncio', [PageController::class, 'searchAds'])->name('ads.search');
 
 // Home Revisore
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 
 // Accetta Annuncio
-Route::patch('/accetta/annuncio/{ad}', [RevisorController::class, 'acceptAd'])->name('revisor.accept_ad');
+Route::patch('/accetta/annuncio/{ad}', [RevisorController::class, 'acceptAd'])->middleware('isRevisor')->name('revisor.accept_ad');
 // Rifiuta Annuncio
-Route::patch('/rifiuta/annuncio/{ad}', [RevisorController::class, 'rejectAd'])->name('revisor.reject_ad');
+Route::patch('/rifiuta/annuncio/{ad}', [RevisorController::class, 'rejectAd'])->middleware('isRevisor')->name('revisor.reject_ad');

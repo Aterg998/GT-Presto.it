@@ -10,8 +10,8 @@ class AdController extends Controller
 {
     public function index()
     {
-        // $ads = Ad::all();
-        $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
+        
+        $ads = Ad::where('is_accepted', true)->take(6)->get()->sortByDesc('created_at');
         return view('ads.index', compact('ads'));
     }
 

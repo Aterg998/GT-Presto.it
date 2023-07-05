@@ -16,7 +16,7 @@
                     <li class="nav-item">
                         <a class="nav-link fw-bolder" href="{{ Route('ads.create') }}">Vendi</a>
                     </li>
-                    @if (Auth::user()->is_revisor)
+                    @if (Auth::user() && Auth::user()->is_revisor)
                     <li class="nav-item">
                         <a class="nav-link btn btn-presto position-relative mx-2" href="{{ Route('revisor.index') }}">Revisor
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #D2360F;">

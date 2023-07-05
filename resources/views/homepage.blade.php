@@ -52,8 +52,8 @@
                         <h2>Recensioni</h2>
                     </div>
 
-                    <div class="slides-3 swiper row" data-aos="fade-up" data-aos-delay="100">
-                        <div class="swiper-wrapper">
+                    <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper row d-flex justify-content-center">
                             <x-reviews />
                         </div>
                     </div>

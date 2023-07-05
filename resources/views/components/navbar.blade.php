@@ -16,10 +16,23 @@
                     <li class="nav-item">
                         <a class="nav-link fw-bolder" href="{{ Route('ads.create') }}">Vendi</a>
                     </li>
-                    <form action="{{route('ads.search')}}" method="GET" class="d-flex ms-5">
-                        <input type="search" name="searched" class="form-control me-2" placeholder="Cerca" aria-label="Cerca">
-                        <button class="btn btn-presto" type="submit">Cerca</button>
-                    </form>
+
+                    @if (Auth::user() && Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-presto position-relative mx-2" href="{{ Route('revisor.index') }}">Revisor
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #D2360F;">
+                                {{App\Models\Ad::toBeRevisionedCount()}}
+                                <span class="visually-hidden">Non letti</span>
+                            </span>
+                        </a>
+                    </li>
+                    @endif
+                    <li class="nav-item">
+                        <form action="{{route('ads.search')}}" method="GET" class="d-flex ms-3">
+                            <input type="search" name="searched" class="form-control me-2" placeholder="Cerca" aria-label="Cerca">
+                            <button class="btn btn-presto" type="submit">Cerca</button>
+                        </form>
+                    </li>
                     <li class="nav-item dropdown d-block d-md-none">
                         <a class="nav-link dropdown-toggle fw-bolder" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

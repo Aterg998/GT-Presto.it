@@ -8,6 +8,7 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
     </ul> --}}
+    <a href={{route('become.revisor')}} class="btn btn-presto">Diventa revisore</a>
     <p class="mb-3 mb-md-0 text-center text-white">Created with Love by &copy; 2023 Marmotte Group 🦫 </p>
   </footer>
 </div>

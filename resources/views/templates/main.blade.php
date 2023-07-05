@@ -14,6 +14,11 @@
 
 <body class= "template">
     <x-navbar/>
+    @if (session()->has('message'))
+    <div class="alert alert-success d-flex align-items-center m-3" role="alert">
+        {{session('message')}}
+    </div>
+    @endif
     
         {{$slot}}
 

@@ -14,7 +14,8 @@ class RevisorController extends Controller
 {
     public function index() {
         $ad_to_check = Ad::where('is_accepted', null)->first();
-        return view('revisor.index', compact('ad_to_check'));
+        $ad_to_restore = Ad::orderBy('updated_at','DESC')->first();
+        return view('revisor.index', compact('ad_to_check'))->with(['ad_to_restore' => $ad_to_restore]);
     }
 
     public function acceptAd (Ad $ad) {
@@ -25,6 +26,11 @@ class RevisorController extends Controller
     public function rejectAd (Ad $ad) {
         $ad->setAccepted(false);
         return redirect()->back()->with('message', 'Complimenti, hai comunque aiutato le marmotte!');
+    }
+
+    public function restoreAd (Ad $ad) {
+        $ad->setAccepted(null);
+        return redirect()->back()->with('message', 'Azione annullata!');
     }
 
     public function makeRevisor (User $user)

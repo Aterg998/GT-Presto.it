@@ -28,6 +28,8 @@ Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('is
 Route::patch('/accetta/annuncio/{ad}', [RevisorController::class, 'acceptAd'])->middleware('isRevisor')->name('revisor.accept_ad');
 // Rifiuta Annuncio
 Route::patch('/rifiuta/annuncio/{ad}', [RevisorController::class, 'rejectAd'])->middleware('isRevisor')->name('revisor.reject_ad');
+// Recupera Annuncio
+Route::patch('/recupera/annuncio/{ad}', [RevisorController::class, 'restoreAd'])->middleware('isRevisor')->name('revisor.restore_ad');
 
 
 // Richiedi di diventare revisore

@@ -1,5 +1,4 @@
 <x-main >
-
 <!-- ======= Revisor Section ======= -->
 <section id="portfolio" class="portfolio sections-bg">
     <div class="container" data-aos="fade-up">
@@ -8,13 +7,16 @@
         </div>
     </div>
 
+    {{-- @if ()
     <div class="col-12 col-md-6 d-flex justify-content-end">
       <form action="{{route('revisor.restore_ad', ['ad' => $ad_to_restore])}}" method="POST">
           @csrf
           @method('PATCH')
           <button type="submit" class="btn btn-warning shadow fs-3 rounded-4 fw-bold">Indietro</button>
       </form>
-    </div>
+    </div> 
+    @endif --}}
+    
 
     @if ($ad_to_check)
     {{-- Bottoni accetta e rifuta --}}

@@ -36,5 +36,6 @@ Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->
 // Rendi utente revisore
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
-Route::get('/lavora-con-noi', [RevisorController::class, 'application'])->name('application.revisor');
+Route::get('/lavora-con-noi', [RevisorController::class, 'application'])->middleware('auth')->name('revisor.application');
+Route::put('/lavora-con-noi/{user}', [RevisorController::class, 'send'])->middleware('auth')->name('revisor.send');
 

@@ -1,13 +1,10 @@
 <x-main>
-    <form class="container-fluid w-50" action="{{route('become.revisor')}}" method="POST">
-        @method('GET')
+    <form class="container-fluid w-50" action="{{route('revisor.send', Auth::User())}}" method="POST">
+        @method('PUT')
         @csrf
     
         @if (session()->has('success'))
             <div class="alert alert-success d-flex align-items-center" role="alert">
-                {{-- <svg class="bi flex-shrink-0 me-2" width="24" hight="24" role="img" aria-label="Success:">
-                    <use xlink:href="#check-circle-fill" />
-                </svg> --}}
                 <div>
                     {{ session('success') }}
                 </div>
@@ -34,9 +31,9 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="Email" class="form-label text-black">Email</label>
-                <input type="text" class="form-control" id="Email" name="Email" value="{{Auth::User()->email}}"></input>
-                @error('Email')
+                <label for="email" class="form-label text-black">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{Auth::User()->email}}">
+                @error('email')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>

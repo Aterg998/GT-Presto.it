@@ -18,14 +18,6 @@ Route::get('/annunci/{ad}/modifica', [AdController::class, 'edit'])->name('ads.e
 // Route::put('/annunci/{ad}', [AdController::class, 'update'])->name('ads.update');
 // Route::delete('/annunci/{ad}', [AdController::class, 'destroy'])->name('ads.delete');
 
-//Routes delle categorie
-// Route::get('/categorie', [CategoryController::class, 'index'])->name('categories.index');
-// Route::get('/categorie/crea', [CategoryController::class, 'create'])->name('categories.create');
-// Route::post('/categorie/salva', [CategoryController::class, 'store'])->name('categories.store');
-// Route::get('/categorie/{category}/dettagli', [CategoryController::class, 'show'])->name('categories.show');
-// Route::get('/categorie/{category}/modifica', [CategoryController::class, 'edit'])->name('categories.edit');
-// Route::put('/categorie/{category}', [CategoryController::class, 'update'])->name('categories.update');
-// Route::delete('/categorie/{category}', [CategoryController::class, 'destroy'])->name('categories.delete');
 
 Route::get('/ricerca/annuncio', [PageController::class, 'searchAds'])->name('ads.search');
 
@@ -43,4 +35,6 @@ Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->
 
 // Rendi utente revisore
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+Route::get('/lavora-con-noi', [RevisorController::class, 'application'])->name('application.revisor');
 

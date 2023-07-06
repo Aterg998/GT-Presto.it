@@ -16,6 +16,10 @@
     color: #006243;
 }
 
+.footer-link:hover {
+    text-decoration: underline;
+}
+
 .homepage-box {
     background-color: #006243;
     width: 250px;

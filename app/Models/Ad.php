@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Scout\Searchable;
 
 class Ad extends Model
@@ -39,6 +40,6 @@ class Ad extends Model
     }
 
     public static function toBeRevisionedCount() {
-        return Ad::where('is_accepted', null)->count();
+        return Ad::where('is_accepted', null)->whereNot('user_id', Auth::user()->id)->count();
     }
 }

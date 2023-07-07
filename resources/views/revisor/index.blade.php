@@ -3,7 +3,7 @@
 <section id="portfolio" class="portfolio sections-bg">
     <div class="container" data-aos="fade-up">
         <div class="section-header">
-            <h2>{{$ad_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}</h2>
+            <h2>{{$ad_to_check && $ad_to_check->user_id != Auth::User()->id ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}</h2>
         </div>
     </div>
 
@@ -18,7 +18,7 @@
     @endif --}}
     
 
-    @if ($ad_to_check)
+    @if ($ad_to_check && $ad_to_check->user_id != Auth::User()->id)
     {{-- Bottoni accetta e rifuta --}}
     <div class="row m-5">
         <div class="col-12 col-md-6 d-flex justify-content-end">

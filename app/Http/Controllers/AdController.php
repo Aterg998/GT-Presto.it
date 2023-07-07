@@ -27,6 +27,7 @@ class AdController extends Controller
 
     public function edit(Ad $ad)
     {
+        $ad->setAccepted(null);
         return view('ads.edit', compact('ad'));
     }
 

@@ -41,7 +41,7 @@
             </div>
         </div>
       </div>
-      <button  href="{{ route('ads.edit', ['ad'=>$ad['id']] )}}">Modifica</button>
+      <a  href="{{ route('ads.edit', ['ad'=>$ad['id']] )}}">Modifica</a>
       <form action="{{route('ads.delete', ['ad'=>$ad['id']])}}" method='POST'>
         @csrf
         @method('DELETE')

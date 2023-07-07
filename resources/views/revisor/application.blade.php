@@ -18,21 +18,21 @@
         <div class="form-row">
             <div class=" form-group">
                 <label for="first_name" class="form-label text-black">Nome</label>
-                <input type="text" class="form-control" id="nome" name="first_name" value="{{old('first_name')}}">
+                <input type="text" class="form-control" required id="nome" name="first_name" value="{{old('first_name')}}">
                 @error('first_name')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="last_name" class="form-label text-black">Cognome</label>
-                <input type="text" class="form-control" id="lastname"name="last_name" value="{{old('last_name')}}">
+                <input type="text" class="form-control" required id="lastname"name="last_name" value="{{old('last_name')}}">
                 @error('last_name')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="email" class="form-label text-black">Email</label>
-                <input type="text" class="form-control" id="email" name="email" value="{{Auth::User()->email}}">
+                <input type="text" class="form-control" required id="email" name="email" value="{{Auth::User()->email}}">
                 @error('email')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror

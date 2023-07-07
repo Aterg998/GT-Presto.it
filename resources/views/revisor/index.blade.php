@@ -7,15 +7,15 @@
         </div>
     </div>
 
-    {{-- @if ()
+    @if (Auth::user()->last_ad_revised)
     <div class="col-12 col-md-6 d-flex justify-content-end">
-      <form action="{{route('revisor.restore_ad', ['ad' => $ad_to_restore])}}" method="POST">
+      <form action="{{route('revisor.restore_ad', ['ad' => Auth::user()->last_ad_revised])}}" method="POST">
           @csrf
           @method('PATCH')
           <button type="submit" class="btn btn-warning shadow fs-3 rounded-4 fw-bold">Indietro</button>
       </form>
     </div> 
-    @endif --}}
+    @endif
     
 
     @if ($ad_to_check)

@@ -3,8 +3,10 @@
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 //Route della homepage
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
@@ -16,7 +18,7 @@ Route::get('/annunci/crea', [AdController::class, 'create'])->name('ads.create')
 Route::get('/annunci/{ad}/dettagli', [AdController::class, 'show'])->name('ads.show');
 Route::get('/annunci/{ad}/modifica', [AdController::class, 'edit'])->name('ads.edit');
 // Route::put('/annunci/{ad}', [AdController::class, 'update'])->name('ads.update');
-// Route::delete('/annunci/{ad}', [AdController::class, 'destroy'])->name('ads.delete');
+Route::delete('/annunci/{ad}', [AdController::class, 'destroy'])->name('ads.delete');
 
 
 Route::get('/ricerca/annuncio', [PageController::class, 'searchAds'])->name('ads.search');
@@ -41,3 +43,4 @@ Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])-
 Route::get('/lavora-con-noi', [RevisorController::class, 'application'])->middleware('auth')->name('revisor.application');
 Route::put('/lavora-con-noi/{user}', [RevisorController::class, 'send'])->middleware('auth')->name('revisor.send');
 
+Route::get('/profilo', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');

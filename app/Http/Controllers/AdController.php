@@ -30,6 +30,12 @@ class AdController extends Controller
         return view('ads.edit', compact('ad'));
     }
 
+    public function destroy(Ad $ad)
+    {
+        $ad->delete();
+        return redirect()->route('profile.index')->with('success', 'Annuncio eliminato');
+    }
+
     public function __construct()
     {
         $this->middleware('auth');

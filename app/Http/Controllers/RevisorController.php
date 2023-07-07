@@ -18,12 +18,16 @@ class RevisorController extends Controller
     }
 
     public function acceptAd (Ad $ad) {
+        $user=Auth::user();
         $ad->setAccepted(true);
+        $user->last_ad_revised = $ad->id;
+        $user->save();
         return redirect()->back()->with('message', 'Complimenti, hai aiutato le marmotte!');
     }
 
     public function rejectAd (Ad $ad) {
         $ad->setAccepted(false);
+        Auth::user()->last_ad_revised = $ad->id;
         return redirect()->back()->with('message', 'Complimenti, hai comunque aiutato le marmotte!');
     }
 

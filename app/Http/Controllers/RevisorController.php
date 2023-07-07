@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
     public function index() {
-        $ad_to_check = Ad::where('is_accepted', null)->first();
+        $ad_to_check = Ad::where('is_accepted', null)->whereNot('user_id', Auth::user()->id)->first();
         return view('revisor.index', compact('ad_to_check'));
     }
 

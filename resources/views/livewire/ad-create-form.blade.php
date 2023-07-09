@@ -12,20 +12,20 @@
         </div>
     @endif
 
-    <div class="text-center font-weight-bold accenti m-5">
+    <div class="text-center fw-bold accenti2 m-5">
         <h2>Crea il tuo annuncio</h2>
     </div>
     
     <div class="form-row">
         <div class=" form-group">
-            <label for="title" class="form-label text-black">Titolo</label>
+            <label for="title" class="form-label accenti mt-2 mb-2">Titolo</label>
             <input type="text" class="form-control" id="title" wire:model="title" value="{{old('title')}}">
             @error('title')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <label for="price" class="form-label text-black">Prezzo</label>
+            <label for="price" class="form-label accenti mt-2 mb-2">Prezzo</label>
             <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
                 wire:model="price" value="{{old('price')}}">
             @error('price')
@@ -33,14 +33,14 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="description" class="form-label text-black">Descrizione</label>
+            <label for="description" class="form-label accenti mt-2 mb-2">Descrizione</label>
             <textarea rows="5" class="form-control" id="description" wire:model="description" value="{{old('description')}}"></textarea>
             @error('description')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class=" form-group">
-            <label for="description" class="form-label text-black">Categoria</label>
+            <label for="description" class="form-label accenti mt-2 mb-2">Categoria</label>
             <select class="form-control" id="category_id" wire:model="category_id" value="{{old('category_id')}} placeholder="Ciao">
                 <option value="">Seleziona la categoria...</option>
                 @foreach ($categories as $category)
@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group mt-3">
-            <label for="image" class="form-labe text-black">Immagine dell'articolo</label>
+            <label for="image" class="form-labe accenti mt-2 mb-2">Immagine dell'articolo</label>
 
             <input class="form-control" id="image" wire:model="image" type="file">
             @error('image')

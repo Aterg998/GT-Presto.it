@@ -30,11 +30,11 @@
                                 <form method="post" action={{route('login')}}>
                                     @csrf
                                     @method('POST')
-                                    <div class="form-group">
+                                    <div class="form-group accenti mt-2 mb-2">
                                         <label>Email</label>
                                         <input class="form-control form-control-lg" type="email" name="email">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group accenti mt-2 mb-2">
                                         <label>Password</label>
                                         <input class="form-control form-control-lg bt" type="password" name="password">
                                        

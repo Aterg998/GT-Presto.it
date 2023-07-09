@@ -46,13 +46,13 @@
         <div class="d-flex justify-content-end col align-items-center">
             @auth
 
-            <div class="dropdown me-5">
+            <div class="dropdown me-5 pe-3">
                 <a style="color:#D2360F" data-bs-toggle="dropdown" aria-expanded="false">
                     Ciao, {{ Auth::user()->name }}
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="dropdown-item" href="{{ Route('ads.create') }}">Vendi</a>
+                        <a class="dropdown-item" href="{{ Route('ads.create') }}">Vendi qualcosa</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="{{ Route('profile.index') }}">I tuoi annunci</a>
@@ -60,7 +60,7 @@
                         @if (Auth::user() && Auth::user()->is_revisor)
                         <li>
                             <a class="dropdown-item position-relative"
-                                href="{{ Route('revisor.index') }}">Revisor
+                                href="{{ Route('revisor.index') }}">Zona revisore
                                 <span class="m-1 badge rounded-pill"
                                     style="background-color: #D2360F;">
                                     {{ App\Models\Ad::toBeRevisionedCount() }}
@@ -72,7 +72,7 @@
                     <li class="">
                         <form class="dropdown-item m-0 p-0" action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <a class="btn dropdown-item nav-logout m-0" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                            <a class="btn dropdown-item nav-logout m-0" onclick="event.preventDefault(); this.closest('form').submit();">Esci</a>
                         </form>
                     </li>
                 </ul>

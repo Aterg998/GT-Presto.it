@@ -28,21 +28,21 @@
                                 <form method="post" action={{route('register')}}>
                                     @csrf
                                     @method('POST')
-                                    <div class="form-group">
+                                    <div class="form-group accenti mt-2 mb-2">
                                         <label>Username</label>
                                         <input class="form-control form-control-lg" type="text" name="name" value="{{old('name')}}" >
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group accenti mt-2 mb-2">
                                         <label>Email</label>
                                         <input class="form-control form-control-lg" type="email" name="email" value="{{old('email')}}">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group accenti mt-2 mb-2">
                                         <label>Password</label>
                                         <input class="form-control form-control-lg" type="password" name="password" >
                                        
                                     </div>
                                     
-                                    <div class="form-group">
+                                    <div class="form-group accenti mt-2 mb-2">
                                         <label>Conferma Password</label>
                                         <input class="form-control form-control-lg" type="password" name="password_confirmation" >
                                     <div class="text-center mt-3">

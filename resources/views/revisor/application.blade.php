@@ -17,21 +17,21 @@
         
         <div class="form-row">
             <div class=" form-group">
-                <label for="first_name" class="form-label text-black">Nome</label>
+                <label for="first_name" class="form-label accenti mt-2 mb-2">Nome</label>
                 <input type="text" class="form-control" required id="nome" name="first_name" value="{{old('first_name')}}">
                 @error('first_name')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="last_name" class="form-label text-black">Cognome</label>
+                <label for="last_name" class="form-label accenti mt-2 mb-2">Cognome</label>
                 <input type="text" class="form-control" required id="lastname"name="last_name" value="{{old('last_name')}}">
                 @error('last_name')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="email" class="form-label text-black">Email</label>
+                <label for="email" class="form-label accenti mt-2 mb-2">Email</label>
                 <input type="text" class="form-control" required id="email" name="email" value="{{Auth::User()->email}}">
                 @error('email')
                     <span class="error text-danger">{{ $message }}</span>

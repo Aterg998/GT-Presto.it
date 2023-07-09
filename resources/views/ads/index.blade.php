@@ -8,6 +8,31 @@
       <h2>Articoli</h2>
       
       {{-- <livewire:ad-index-list/> --}}
+         <!-- Start Filter Bar -->
+         <div class="filter-bar d-flex justify-content-center rounded-3">
+          <div class="mt-2">
+            <select class="rounded-3 p-1 border-white">
+              <option class="" value="1">Ordinamento predefinito</option>
+              <option value="1">Ultimi Arrivi</option>
+              <option value="1">Primi Aggiunti</option>
+            </select>
+          </div>
+          <div class="mx-4 mt-2">
+            <select class="rounded-3 p-1 border-white">
+              <option value="1">Show 12</option>
+              <option value="1">Show 12</option>
+              <option value="1">Show 12</option>
+            </select>
+          </div>
+          <div>
+              <form action="{{ route('ads.search') }}" method="GET" class="d-flex mt-2">
+                  <input type="search" name="searched" class="form-control me-2 border-white" placeholder="Cerca"
+                      aria-label="Cerca">
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End Filter Bar -->
 
       <div class="container row">
         @forelse ($ads as $ad)

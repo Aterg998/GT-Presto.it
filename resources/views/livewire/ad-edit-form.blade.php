@@ -12,20 +12,20 @@
         </div>
     @endif
 
-    <div class="text-center font-weight-bold accenti m-5">
+    <div class="text-center font-weight-bold accenti2 m-5">
         <h2>Modifica il tuo annuncio</h2>
     </div>
 
     <div class="form-row">
         <div class="form-group">
-            <label for="title" class="form-label">Titolo</label>
+            <label for="title" class="form-label accenti">Titolo</label>
             <input type="text" class="form-control" id="title" wire:model="title">
             @error('title')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <label for="price" class="form-label">Prezzo</label>
+            <label for="price" class="form-label accenti mt-3">Prezzo</label>
             <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
                 wire:model="price">
             @error('price')
@@ -33,14 +33,14 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="description" class="form-label">Descrizione</label>
+            <label for="description" class="form-label accenti mt-3">Descrizione</label>
             <textarea rows="5" class="form-control" id="description" wire:model="description"></textarea>
             @error('description')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <label for="description" class="form-label">Categoria</label>
+            <label for="description" class="form-label accenti mt-3">Categoria</label>
             <select class="form-control" id="category_id" wire:model="category_id">
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -48,7 +48,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="image" class="form-label">Immagine dell'articolo</label>
+            <label for="image" class="form-label accenti mt-3">Immagine dell'articolo</label>
             <input class="form-control" id="image" wire:model="image" type="file">
         </div>
         @error('image')
@@ -59,8 +59,7 @@
 
     </div>
     <br>
-    <div class="text-center">
+    <div class="text-center m-3">
         <button type="submit" class="btn btn-presto">Aggiorna</button>
-
     </div>
 </form>

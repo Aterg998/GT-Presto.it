@@ -86,6 +86,29 @@
     animation: fadein 1s ease-out forwards; /* Imposta l'animazione */
   }
 
+.filter-bar {
+    padding:0px 20px 10px 20px;
+    background: rgba(147, 169, 150, 0.5);
+    margin-bottom: 30px;
+}
+
+.filter-bar-search {
+    margin-top:10px
+}
+
+
+.filter-bar-search input:focus{
+    outline:0;
+    box-shadow:none
+}
+
+
+.sorting .nice-select:after{
+    right:18px
+}
+
+
+
 @keyframes fadein {
 0% {
     opacity: 0;

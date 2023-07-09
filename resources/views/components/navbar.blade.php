@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse nav-text ">
                 <ul class="navbar-nav d-flex align-items-center">
                     <li class="nav-item mx-4">
-                        <a class="accenti mx-2 presto fs-2" href="{{ Route('homepage') }}">Presto.it</a>
+                        <a class="accenti mx-2 presto fs-2" href="{{ Route('homepage') }}">Presto<span style="color:#D2360F;">.</span>it</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bolder" href="{{ Route('ads.index') }}">Annunci</a>

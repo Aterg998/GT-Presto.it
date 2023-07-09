@@ -16,6 +16,6 @@ class ProfileController extends Controller
             $ads = Ad::where('user_id', Auth::User()->id)->get();
         
         
-        return view('profile.index', compact('ads'));
+        return view('profile.index', compact('ads', 'categories'));
     }
 }

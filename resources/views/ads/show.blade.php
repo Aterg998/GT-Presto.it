@@ -45,6 +45,9 @@
                         <p class="text-black" style="line-height: 1rem"> <span class="accenti">Categoria:</span> {{ $ad->category->name }}</p>
                         <p class="text-black" style="line-height: 1rem"> <span class="accenti">Prezzo:</span> {{$ad->price}}</p>
                     </div>
+                
+                    {{-- se l'utente id che è loggato è lo stesso che ha creato l'annuncio --}}
+                @if (Auth::User()->id == 'user_id')
                     <div class="d-flex mt-3">
                         <a class="btn btn-presto" href="{{ route('ads.edit', ['ad' => $ad['id']]) }}">Modifica</a>
                         <form action="{{ route('ads.delete', ['ad' => $ad['id']]) }}" method='POST'>
@@ -53,7 +56,8 @@
                         <button class="btn btn-presto ms-3">Elimina</button>
                         </form>
                     </div>
-
+                @else
+                @endif
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
     @csrf
 
     @if (session()->has('success'))
-        <div class="alert alert-success d-flex align-items-center" role="alert">
+        <div class="alert alert-success d-flex align-items-center m-5" role="alert">
             {{-- <svg class="bi flex-shrink-0 me-2" width="24" hight="24" role="img" aria-label="Success:">
                 <use xlink:href="#check-circle-fill" />
             </svg> --}}

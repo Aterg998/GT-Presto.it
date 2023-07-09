@@ -45,6 +45,10 @@
      color:rgba(147, 169, 150, 0.5) !important;
 } 
 
+.nav-logout:hover {
+    color:#D2360F !important;
+}
+
 .nav2 {
     border-top-style: none;
     border-right-style: none;
@@ -53,6 +57,7 @@
     border-width: 1px;
     color:#D2360F;
 }
+
 
 .btn-presto {
     background-color: #006243;

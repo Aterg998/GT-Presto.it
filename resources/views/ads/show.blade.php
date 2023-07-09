@@ -47,7 +47,7 @@
                     </div>
                 
                     {{-- se l'utente id che è loggato è lo stesso che ha creato l'annuncio --}}
-                @if (Auth::User()->id == 'user_id')
+                @if ($ad->user_id == Auth::user()->id)
                     <div class="d-flex mt-3">
                         <a class="btn btn-presto" href="{{ route('ads.edit', ['ad' => $ad['id']]) }}">Modifica</a>
                         <form action="{{ route('ads.delete', ['ad' => $ad['id']]) }}" method='POST'>

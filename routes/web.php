@@ -10,6 +10,8 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 //Route della homepage
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
+//Route del profilo
+Route::get('/profilo', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
 
 //Routes degli annunci
 Route::get('/annunci', [AdController::class, 'index'])->name('ads.index');
@@ -42,5 +44,3 @@ Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])-
 
 Route::get('/lavora-con-noi', [RevisorController::class, 'application'])->middleware('auth')->name('revisor.application');
 Route::put('/lavora-con-noi/{user}', [RevisorController::class, 'send'])->middleware('auth')->name('revisor.send');
-
-Route::get('/profilo', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');

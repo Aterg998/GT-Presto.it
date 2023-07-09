@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
+use App\Models\Category;
 use App\Http\Requests\StoreAdRequest;
 use App\Http\Requests\UpdateAdRequest;
 
@@ -10,9 +11,9 @@ class AdController extends Controller
 {
     public function index()
     {
-        
+        $categories = Category::all();
         $ads = Ad::where('is_accepted', true)->take(6)->get()->sortByDesc('created_at');
-        return view('ads.index', compact('ads'));
+        return view('ads.index', compact('ads'))->with(compact('categories'));
     }
 
     public function create()

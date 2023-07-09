@@ -48,7 +48,7 @@
 
             <div class="dropdown me-5 pe-3">
                 <a style="color:#D2360F" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ciao, {{ Auth::user()->name }}
+                    Ciao, {{ Auth::user()->name }} <i class="bi bi-caret-down-fill"></i>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
@@ -94,7 +94,7 @@
         <ul class="nav justify-content-evenly">
             @foreach ($categories as $category)
                 <li class="nav-item nav2" @if ($category->id == 1) style="border-left-style: none;" @endif>
-                    <a href="{{ Route('ads.index', ['cat' => $category->id]) }}"
+                    <a href="{{ Route('ads.search', ['searched' => strtolower($category->name)]) }}"
                         class="nav-link link-body-emphasis text-white" aria-current="page">{{ $category->name }}</a>
                 </li>
             @endforeach

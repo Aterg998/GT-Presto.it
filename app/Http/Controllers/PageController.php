@@ -24,7 +24,6 @@ class PageController extends Controller
 
     public function searchAds (Request $request)
     {
-        dd($request);
         $categories = Category::all();
         $ads = Ad::search($request->searched)->paginate(10);
 

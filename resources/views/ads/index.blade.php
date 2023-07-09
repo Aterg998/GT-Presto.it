@@ -6,48 +6,45 @@
     <div class="section-header">
       <h2>Articoli</h2>
       
-         <!-- Start Filter Bar -->
-         <div class="filter-bar d-flex justify-content-center align-items-center rounded-3">
-            <form action="{{ route('ads.search') }}" method="GET" class="d-flex mt-2">
-              <div class="mt-2">
-                <select class="rounded-3 p-1 border-white" >
-                  <option value="none">- Ordina -</option>
-                  <option value="date_desc">Più recente</option>
-                  <option value="date_asc">Meno recente</option>
-                </select>
-              </div>
-              <div class="mx-4 mt-2">
-                <select class="rounded-3 p-1 border-white">
-                  <option value="none">- Categoria -</option>
-                  @foreach ($categories as $category)
-                  <option value="{{$category->name}}">{{$category->name}}</option>
-                  @endforeach
-                </select>
-              </div>
-              <input type="search" name="searched" class="form-control me-2 border-white" placeholder="Cerca tra gli annunci"
-                  aria-label="Cerca">
-              <button class="btn btn-presto">Invia</button>
-            </form>
-            </div>
-          </div>            
-        </div>
-        <!-- End Filter Bar -->
+        <!-- Start Filter Bar -->
+        <div class="filter-bar d-flex justify-content-center rounded-3">
+          <form action="{{ route('ads.search') }}" method="GET" class="d-flex mt-2">
+            
+            <select class="rounded-3 p-1 border-white mt-2" name="orderBy">
+              <option value="none">- Ordina -</option>
+              <option value="date_desc">Più recente</option>
+              <option value="date_asc">Meno recente</option>
+            </select>
+          
+            <select class="rounded-3 p-1 border-white mx-4 mt-2" name="category">
+              <option value="none">- Categoria -</option>
+              @foreach ($categories as $category)
+              <option value="{{$category->id}}">{{$category->name}}</option>
+              @endforeach
+            </select>
 
-      <div class="container row">
+            <input type="search" name="searched" class="form-control me-2 border-white" placeholder="Cerca tra gli annunci" aria-label="Cerca">
+
+            <button class="btn btn-presto">Invia</button>
+          </form>
+          </div>
+        </div>            
+      </div>
+      <!-- End Filter Bar -->
+
+      <div class="container-fluid row">
         @forelse ($ads as $ad)
         <div class="col-12 col-md-4">
             <x-card :ad="$ad"/>
         </div>
         @empty
-        <div class="col-12">
-            <div class="alert alert-warning py-3 shadow">
-                <p class="lead">Non ci sono annunci per questa ricerca. Prova a cambiare i parametri.</p>
-            </div>
+        <div class="col alert alert-warning py-3 ms-4 shadow">
+            <p class="lead text-center">Non ci sono annunci per questa ricerca. Prova a cambiare i parametri.</p>
         </div>
         @endforelse
       </div>
     </div>
-    </div>
+  </div>
 
     <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
 

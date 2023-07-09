@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Category;
-use App\Http\Requests\StoreAdRequest;
-use App\Http\Requests\UpdateAdRequest;
 
 class AdController extends Controller
 {

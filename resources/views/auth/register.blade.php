@@ -5,7 +5,7 @@
                 <div class="d-table-cell align-middle">
 
                     <div class="text-center m-4">
-                        <h1 class="h2">Registrati</h1>
+                        <h1 class="h2">{{__('messages.register')}}</h1>
                        
                     </div>
 
@@ -37,17 +37,17 @@
                                         <input class="form-control form-control-lg" type="email" name="email" value="{{old('email')}}">
                                     </div>
                                     <div class="form-group accenti mt-2 mb-2">
-                                        <label>Password</label>
+                                        <label>{{__('messages.password')}}</label>
                                         <input class="form-control form-control-lg" type="password" name="password" >
                                        
                                     </div>
                                     
                                     <div class="form-group accenti mt-2 mb-2">
-                                        <label>Conferma Password</label>
+                                        <label>{{__('messages.confirm_password')}}</label>
                                         <input class="form-control form-control-lg" type="password" name="password_confirmation" >
                                     <div class="text-center mt-3">
                                       
-                                        <button type="submit" class="btn btn-presto btn btn-lg btn-primary">Accedi</button>
+                                        <button type="submit" class="btn btn-presto btn btn-lg btn-primary">{{__('messages.login')}}</button>
                                     </div>
                                 </form>
                             </div>

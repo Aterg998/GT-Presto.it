@@ -16,4 +16,8 @@ return [
     'review' => 'Reviews',
     'about_us' => 'About us',
     'redactor' => 'Become a Redactor',
+    'sign_in' => 'Sign in to continue',
+    'welcome_back' => 'Welcome Back',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm password',
 ];

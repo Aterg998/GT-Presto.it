@@ -16,4 +16,8 @@ return [
     'review' => 'Bewertungen',
     'about_us' => 'Über uns',
     'redactor' => 'Werden Sie Redakteur',
+    'sign_in' => 'Melden Sie sich bei Ihrem Konto an, um fortzufahren',
+    'welcome_back' => 'Willkommen zurück',
+    'password' => 'Passwort',
+    'confirm_password' => 'Bestätige das Passwort',
 ];

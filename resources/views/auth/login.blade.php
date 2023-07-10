@@ -5,9 +5,9 @@
                 <div class="d-table-cell align-middle">
 
                     <div class="text-center mt-4">
-                        <h1 class="h2">Bentornato</h1>
+                        <h1 class="h2">{{__('messages.welcome_back')}}</h1>
                         <p class="text-black">
-                            Accedi al tuo account per continuare
+                            {{__('messages.sign_in')}}
                         </p>
                     </div>
 
@@ -42,11 +42,11 @@
                                     <div class="row"> 
                                     <div class="text-center mt-3 col">
                                       
-                                        <button type="submit" class="btn btn-presto btn-lg btn-primary">Accedi</button>
+                                        <button type="submit" class="btn btn-presto btn-lg btn-primary">{{__('messages.login')}}</button>
                                     </div>
                                     <div class="text-center mt-3 col">
                                       
-                                        <a class="btn btn btn-presto btn-lg btn-primary" href="{{route('register')}}">Registrati</a>
+                                        <a class="btn btn btn-presto btn-lg btn-primary" href="{{route('register')}}">{{__('messages.register')}}</a>
                                     </div>
                                 </div>
                                 </form>

@@ -16,5 +16,9 @@ return [
     'review' => 'Recensioni',
     'about_us' => 'Chi Siamo',
     'redactor' => 'Diventa Revisore',
+    'sign_in' => 'Accedi al tuo account per continuare',
+    'welcome_back' => 'Bentornato',
+    'password' => 'Password',
+    'confirm_password' => 'Conferma password',
 
 ];

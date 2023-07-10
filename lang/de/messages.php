@@ -7,4 +7,6 @@ return [
     'register' => 'Anmelden',
     'search' => 'Nahe',
     'hello' => 'Hallo',
+    'start' => 'Beginnen Sie mit dem Verkauf',
+    'last_ads' => 'Neueste Anzeigen veröffentlicht',
 ];

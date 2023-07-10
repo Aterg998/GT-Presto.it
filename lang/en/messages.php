@@ -7,4 +7,6 @@ return [
     'register' => 'Register',
     'search' => 'Search',
     'hello' => 'Hello',
+    'start' => 'Start selling',
+    'last_ads' => 'Latest ads posted'
 ];

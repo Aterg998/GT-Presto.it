@@ -6,8 +6,7 @@
                 <div
                     class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
                     <h2>{{__('messages.homepageH2')}} <span style="color: #006243;" class="presto">Presto</span><span style="color:#D2360F;">.</span><span style="color: #006243;" class="presto">it</span></h2>
-                    <p>Su Presto compri e vendi di tutto, a distanza e in tutta sicurezza. Con l'usato, ci guadagni tu e
-                        ci guadagna anche il Pianeta.</p>
+                    <p>{{__('messages.slogan')}}</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="{{ route('ads.create') }}" class="btn-get-started">{{__('messages.start')}}</a>
                     </div>
@@ -49,7 +48,7 @@
                 <div class="container col-6" data-aos="fade-up">
 
                     <div class="section-header">
-                        <h2>Recensioni</h2>
+                        <h2>{{__('messages.review')}}</h2>
                     </div>
 
                     <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">

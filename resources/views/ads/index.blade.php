@@ -25,14 +25,14 @@
 
             <input type="search" name="searched" class="form-control me-2 border-white" placeholder="Cerca tra gli annunci" aria-label="Cerca">
 
-            <button class="btn btn-presto">Invia</button>
+            <button class="btn btn-presto"><i class="bi bi-search"></i></button>
           </form>
           </div>
         </div>            
       </div>
       <!-- End Filter Bar -->
 
-      <div class="container-fluid row">
+      <div class="container row">
         @forelse ($ads as $ad)
         <div class="col-12 col-md-4">
             <x-card :ad="$ad"/>

@@ -12,14 +12,29 @@
                         <a class="accenti mx-2 presto fs-2" href="{{ Route('homepage') }}">Presto<span style="color:#D2360F;">.</span>it</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bolder" href="{{ Route('ads.index') }}">Annunci</a>
+                        <a class="nav-link fw-bolder" href="{{ Route('ads.index') }}">{{__('messages.ads')}}</a>
                     </li>
                     <li class="nav-item">
                         <form action="{{ route('ads.search') }}" method="GET" class="d-flex ms-3">
-                            <input type="search" name="searched" class="form-control me-2" placeholder="Cerca"
+                            <input type="search" name="searched" class="form-control me-2" placeholder="{{__('messages.search')}}"
                                 aria-label="Cerca">
-                            <button class="btn btn-presto" type="submit">Cerca</button>
+                            <button class="btn btn-presto" type="submit"><i class="bi bi-search"></i></button>
                         </form>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <span class="fi fi-it">
+                            <x-_locale lang='it' nation='Italy'/>
+                        </span>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <span class="fi fi-gb">
+                            <x-_locale lang='uk' nation='United Kingdom'/>
+                        </span>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <span class="fi fi-de">
+                            <x-_locale lang='de' nation='Germany'/>
+                        </span>
                     </li>
                     <li class="nav-item dropdown d-block d-md-none">
                         <a class="nav-link dropdown-toggle fw-bolder" href="#" role="button"
@@ -48,7 +63,7 @@
 
             <div class="dropdown me-5 pe-3">
                 <a style="color:#D2360F" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ciao, {{ Auth::user()->name }} <i class="bi bi-caret-down-fill"></i>
+                    {{__('messages.hello')}}, {{ Auth::user()->name }} <i class="bi bi-caret-down-fill"></i>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
@@ -78,8 +93,8 @@
                 </ul>
             </div>
         @else
-            <a class="btn btn-presto accenti mx-2" href='{{ Route('login') }}'>Accedi</a>
-            <a class="btn btn-presto accenti mx-2" href='{{ Route('register') }}'>Registrati</a>
+            <a class="btn btn-presto accenti mx-2" href='{{ Route('login') }}'>{{__('messages.login')}}</a>
+            <a class="btn btn-presto accenti mx-2" href='{{ Route('register') }}'>{{__('messages.register')}}</a>
         @endauth
     </div>
 </div>

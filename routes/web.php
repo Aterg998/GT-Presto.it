@@ -35,7 +35,6 @@ Route::patch('/rifiuta/annuncio/{ad}', [RevisorController::class, 'rejectAd'])->
 // Recupera Annuncio
 Route::patch('/recupera/annuncio/{ad}', [RevisorController::class, 'restoreAd'])->middleware('isRevisor')->name('revisor.restore_ad');
 
-
 // Richiedi di diventare revisore
 Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 
@@ -44,3 +43,6 @@ Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])-
 
 Route::get('/lavora-con-noi', [RevisorController::class, 'application'])->middleware('auth')->name('revisor.application');
 Route::put('/lavora-con-noi/{user}', [RevisorController::class, 'send'])->middleware('auth')->name('revisor.send');
+
+// Rotta cambio lingua
+Route::post('lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');

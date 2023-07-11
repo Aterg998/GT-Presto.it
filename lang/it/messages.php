@@ -23,6 +23,6 @@ return [
     'articles' => 'Articoli',
     'order' => 'Ordina',
     'search_ads' => 'Cerca tra gli annunci',
-
+    'no_ads' => 'Non ci sono annunci per questa ricerca. Prova a cambiare i parametri.',
 
 ];

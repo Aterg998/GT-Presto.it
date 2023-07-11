@@ -39,7 +39,7 @@
         </div>
         @empty
         <div class="col alert alert-warning py-3 ms-4 shadow">
-            <p class="lead text-center">Non ci sono annunci per questa ricerca. Prova a cambiare i parametri.</p>
+            <p class="lead text-center">{{__('messages.no_ads')}}</p>
         </div>
         @endforelse
       </div>

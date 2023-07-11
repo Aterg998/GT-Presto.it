@@ -23,4 +23,5 @@ return [
     'articles' => 'Artikel',
     'order' => 'Befehl',
     'search_ads' => 'Suchen Sie in den Anzeigen',
+    'no_ads' => 'Es gibt keine Anzeigen für diese Suche. Versuchen Sie, die Parameter zu ändern.',
 ];

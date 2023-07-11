@@ -23,4 +23,5 @@ return [
     'articles' => 'Articles',
     'order' => 'Order',
     'search_ads' => 'Search in the ads',
+    'no_ads' => 'There are no ads for this search. Try changing the parameters.',
 ];

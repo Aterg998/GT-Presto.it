@@ -22,19 +22,13 @@
                         </form>
                     </li>
                     <li class="nav-item mx-2">
-                        <span class="fi fi-it">
-                            <x-_locale lang='it' nation='Italy'/>
-                        </span>
+                        <x-_locale lang='it' nation='it'/>
                     </li>
                     <li class="nav-item mx-2">
-                        <span class="fi fi-gb">
-                            <x-_locale lang='uk' nation='United Kingdom'/>
-                        </span>
+                        <x-_locale lang='gb' nation='gb'/>
                     </li>
                     <li class="nav-item mx-2">
-                        <span class="fi fi-de">
-                            <x-_locale lang='de' nation='Germany'/>
-                        </span>
+                        <x-_locale lang='de' nation='de'/>
                     </li>
                     <li class="nav-item dropdown d-block d-md-none">
                         <a class="nav-link dropdown-toggle fw-bolder" href="#" role="button"
@@ -48,7 +42,6 @@
                                         href="{{ Route('ads.index', ['category' => $category->id]) }}">{{ $category->name }}</a>
                                 </li>
                             @endforeach
-                            {{--  dobbiamo inserire il filtro delle categorie nella route --}}
                         </ul>
                     </li>
                 </ul>

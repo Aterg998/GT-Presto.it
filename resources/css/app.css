@@ -12,6 +12,11 @@
     background-color: #006243;
 }
 
+.img-preview {
+    height: 300px;
+    width: 300px;
+}
+
 .accenti2 {
     color:#D2360F;
 }

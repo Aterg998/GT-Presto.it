@@ -35,25 +35,38 @@ class AdCreateForm extends Component
         return view('livewire.ad-create-form', compact('categories'));
     }
 
+    public function removeImage($key){
+        if (in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
+    }
+
     public function store()
     {
-        $placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
+        //$placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
 
         $this->validate();
 
-        $categories = Category::all();
+        $this->ad = Category::find($this->category)->ads()->create($this->validate());
+        if(count($this->images)){
+            foreach ($this->images as $image) {
+                $this->ad->images()->create(['path'=>$image->store('image', 'public')]);
+            }
+        }
+
+        
 
         Ad::create([
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'image' => $placeholder,
+            'image' => $this->image,
             'category_id' => $this->category_id,
             'user_id' => $this->user_id=Auth::user()->id
         ]);
 
         session()->flash('success', 'Annuncio inserito con successo!');
         $this->reset(['title', 'price', 'description', 'image', 'category_id']);
-        return view('livewire.ad-index-list', compact('categories'));
+        return view('livewire.ad-create-form');
     }
 }

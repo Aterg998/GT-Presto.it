@@ -2,7 +2,7 @@
   <div class="portfolio-item filter-app">
     <div class="portfolio-wrap">
       <a href="{{route('ads.show', $ad->id)}}" data-gallery="portfolio-gallery-app" class="glightbox">
-        <img src="{{$ad->image}}" class="img-fluid" style="width: 300px; height: 300px" alt="">
+        <img src="{{'storage/'.$ad->images()->pluck('path')->first()}}" class="img-fluid" style="width: 300px; height: 300px" alt="">
       </a>
       <div class="portfolio-info mt-3">
         <h4><a href="{{route('ads.show', $ad->id)}}" title="title" class="accenti2 fw-medium">{{$ad->title}}</a></h4>

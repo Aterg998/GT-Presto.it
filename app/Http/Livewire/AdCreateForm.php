@@ -14,12 +14,14 @@ class AdCreateForm extends Component
 
     use WithFileUploads;
 
-    public $title, $price, $description, $image, $category_id, $user_id;
+    public $title, $price, $description, $temporary_images, $images=[], $image, $category_id, $user_id;
 
     protected $rules = [
         'title' => 'required|min:3',
         'price' => 'required',
         'description' => 'required|min:10|max:500',
+        'images' => 'image|max:1024',
+        'temporary_images.*' => 'image|max:1024',
         'category_id' => 'required'
     ];
 

@@ -53,11 +53,27 @@
         <div class="form-group mt-3">
             <label for="image" class="form-labe accenti mt-2 mb-2">Immagine dell'articolo</label>
 
-            <input class="form-control" id="image" wire:model="image" type="file">
-            @error('image')
+            <input class="form-control @error('temporary_images.*') is-invalid @enderror" id="image" wire:model="temporary_images" type="file" name="images" multiple>
+            @error('temporary_images.*')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
+        @if (!empty($images))
+        <div class="row">
+            <div class="col-12">
+                <p>Photo preview</p>
+                <div class="row border border-4 border-info rounded shadow py-4">
+                    @foreach ($images as $key => $image)
+                        <div class="col my-3">
+                            <div class="img-preview mx-auto shadow rounded" style="background: url({{$image->temporaryUrl()}});"></div>
+                            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                        </div>
+                        
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        @endif
 
     </div>
     <br>

@@ -20,4 +20,7 @@ return [
     'welcome_back' => 'Willkommen zurück',
     'password' => 'Passwort',
     'confirm_password' => 'Bestätige das Passwort',
+    'articles' => 'Artikel',
+    'order' => 'Befehl',
+    'search_ads' => 'Suchen Sie in den Anzeigen',
 ];

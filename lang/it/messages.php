@@ -20,5 +20,9 @@ return [
     'welcome_back' => 'Bentornato',
     'password' => 'Password',
     'confirm_password' => 'Conferma password',
+    'articles' => 'Articoli',
+    'order' => 'Ordina',
+    'search_ads' => 'Cerca tra gli annunci',
+
 
 ];

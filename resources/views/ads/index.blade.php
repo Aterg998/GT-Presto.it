@@ -4,26 +4,26 @@
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Articoli</h2>
+      <h2>{{__('messages.articles')}}</h2>
       
         <!-- Start Filter Bar -->
         <div class="filter-bar d-flex justify-content-center rounded-3">
           <form action="{{ route('ads.search') }}" method="GET" class="d-flex mt-2">
             
             <select class="rounded-3 p-1 border-white mt-2" name="orderBy">
-              <option value="none">- Ordina -</option>
+              <option value="none">- {{__('messages.order')}} -</option>
               <option value="date_desc">Più recente</option>
               <option value="date_asc">Meno recente</option>
             </select>
           
             <select class="rounded-3 p-1 border-white mx-4 mt-2" name="category">
-              <option value="none">- Categoria -</option>
+              <option value="none">- {{__('messages.category')}} -</option>
               @foreach ($categories as $category)
               <option value="{{$category->id}}">{{$category->name}}</option>
               @endforeach
             </select>
 
-            <input type="search" name="searched" class="form-control me-2 border-white" placeholder="Cerca tra gli annunci" aria-label="Cerca">
+            <input type="search" name="searched" class="form-control me-2 border-white" placeholder="{{__('messages.search_ads')}}" aria-label="Cerca">
 
             <button class="btn btn-presto"><i class="bi bi-search"></i></button>
           </form>

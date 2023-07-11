@@ -20,4 +20,7 @@ return [
     'welcome_back' => 'Welcome Back',
     'password' => 'Password',
     'confirm_password' => 'Confirm password',
+    'articles' => 'Articles',
+    'order' => 'Order',
+    'search_ads' => 'Search in the ads',
 ];

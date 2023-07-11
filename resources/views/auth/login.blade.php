@@ -35,7 +35,7 @@
                                         <input class="form-control form-control-lg" type="email" name="email">
                                     </div>
                                     <div class="form-group accenti mt-2 mb-2">
-                                        <label>Password</label>
+                                        <label>{{__('messages.password')}}</label>
                                         <input class="form-control form-control-lg bt" type="password" name="password">
                                        
                                     </div>

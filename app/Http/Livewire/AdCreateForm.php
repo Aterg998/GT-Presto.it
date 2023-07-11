@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Requests\StoreAdRequest;
 use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
@@ -11,10 +10,9 @@ use Livewire\WithFileUploads;
 
 class AdCreateForm extends Component
 {
-
     use WithFileUploads;
 
-    public $title, $price, $description, $temporary_images, $images=[], $image, $category_id, $user_id;
+    public $title, $price, $description, $temporary_images, $images = [], $category_id, $user_id, $ad;
 
     protected $rules = [
         'title' => 'required|min:3',
@@ -41,32 +39,55 @@ class AdCreateForm extends Component
         }
     }
 
+    public function updatedTemporaryImages()
+    {
+        if ($this->validate(['temporary_images.*' => 'image|max:1024'])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
     public function store()
     {
-        //$placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
+        $placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
 
         $this->validate();
 
-        $this->ad = Category::find($this->category)->ads()->create($this->validate());
-        if(count($this->images)){
-            foreach ($this->images as $image) {
-                $this->ad->images()->create(['path'=>$image->store('image', 'public')]);
-            }
-        }
-
-        
+        // Ad::create([
+        //     'title' => $this->title,
+        //     'price' => $this->price,
+        //     'description' => $this->description,
+        //     'category_id' => $this->category_id,
+        //     'user_id' => $this->user_id=Auth::user()->id
+        // ]);
 
         Ad::create([
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'image' => $this->image,
             'category_id' => $this->category_id,
             'user_id' => $this->user_id=Auth::user()->id
         ]);
 
-        session()->flash('success', 'Annuncio inserito con successo!');
-        $this->reset(['title', 'price', 'description', 'image', 'category_id']);
+        if(count($this->images)){
+            foreach ($this->images as $image) {
+                $this->ad->images()->create(['path' => $image->store('images', 'public')]);
+            }
+        }
+
+        session()->flash('success', 'Annuncio inserito! Sarà pubblicato dopo la revisione');
+        $this->cleanForm();
         return view('livewire.ad-create-form');
+    }
+
+    public function cleanForm()
+    {
+        $this->title = '';
+        $this->price = '';
+        $this->description = '';
+        $this->temporary_images = [];
+        $this->images = [];
+        $this->category_id = '';
     }
 }

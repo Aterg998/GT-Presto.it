@@ -41,7 +41,7 @@
         </div>
         <div class=" form-group">
             <label for="description" class="form-label accenti mt-2 mb-2">Categoria</label>
-            <select class="form-control" id="category_id" wire:model="category_id" value="{{old('category_id')}} placeholder="Ciao">
+            <select class="form-control" id="category_id" wire:model="category_id" value="{{old('category_id')}}" placeholder="Ciao">
                 <option value="">Seleziona la categoria...</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -64,11 +64,12 @@
                 <p>Photo preview</p>
                 <div class="row border border-4 border-info rounded shadow py-4">
                     @foreach ($images as $key => $image)
-                        <div class="col my-3">
-                            <div class="img-preview mx-auto shadow rounded" style="background-images: url({{$image->temporaryUrl()}})"></div>
-                            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                    <div class="col my-3">
+                        <div class="img-preview mx-auto shadow rounded">
+                            <img style="height: 300px" src="{{$image->temporaryUrl()}}" alt="">
                         </div>
-                        
+                        <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                    </div>
                     @endforeach
                 </div>
             </div>

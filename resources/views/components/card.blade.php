@@ -2,7 +2,7 @@
   <div class="portfolio-item filter-app">
     <div class="portfolio-wrap">
       <a href="{{route('ads.show', $ad->id)}}" data-gallery="portfolio-gallery-app" class="glightbox">
-        <img src="{{'storage/'.$ad->images()->pluck('path')->first()}}" class="img-fluid" style="width: 300px; height: 300px" alt="">
+        <img src="@if (!$ad->images()->get()->isEmpty()) {{Storage::url($ad->images->first()->path)}} @else https://i.etsystatic.com/31368871/r/il/90f2d7/3312428770/il_300x300.3312428770_bc75.jpg @endif" class="img-fluid" style="width: 300px; height: 300px" alt="">
       </a>
       <div class="portfolio-info mt-3">
         <h4><a href="{{route('ads.show', $ad->id)}}" title="title" class="accenti2 fw-medium">{{$ad->title}}</a></h4>

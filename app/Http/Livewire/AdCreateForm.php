@@ -49,8 +49,6 @@ class AdCreateForm extends Component
 
     public function store()
     {
-        $placeholder = 'https://www.mrw.it/img/cope/0iwkf4_1609360688.jpg';
-
         $this->validate();
 
         $this->ad = Category::find($this->category_id)->ads()->create([

@@ -5,10 +5,10 @@
             <div class="row gy-5" data-aos="fade-in">
                 <div
                     class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-                    <h2>{{__('messages.homepageH2')}} <span style="color: #006243;" class="presto">Presto</span><span style="color:#D2360F;">.</span><span style="color: #006243;" class="presto">it</span></h2>
-                    <p>{{__('messages.slogan')}}</p>
+                    <h2>{{ __('messages.homepageH2') }} <span style="color: #006243;" class="presto">Presto</span><span style="color:#D2360F;" class="presto">.</span><span style="color: #006243;" class="presto">it</span></h2>
+                    <p>{{ __('messages.slogan') }}</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="{{ route('ads.create') }}" class="btn-get-started">{{__('messages.start')}}</a>
+                        <a href="{{ route('ads.create') }}" class="btn-get-started">{{ __('messages.start') }}</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
@@ -27,10 +27,10 @@
 
     {{-- annunci aka ultimi aggiunti --}}
 
-    
+
     <section id="latest" class="bg-white">
         <div class="section-header">
-            <h2>{{__('messages.last_ads')}}</h2>
+            <h2>{{ __('messages.last_ads') }}</h2>
         </div>
         <div class="m-auto row container latest">
             @foreach ($ads as $ad)
@@ -43,20 +43,20 @@
 
 
 
-            <!-- ======= Testimonials Section ======= -->
-            <section id="testimonials" class="testimonials bg-white">
-                <div class="container col-6" data-aos="fade-up">
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials bg-white">
+        <div class="container col-6" data-aos="fade-up">
 
-                    <div class="section-header">
-                        <h2>{{__('messages.review')}}</h2>
-                    </div>
+            <div class="section-header">
+                <h2>{{ __('messages.review') }}</h2>
+            </div>
 
-                    <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
-                        <div class="swiper-wrapper row d-flex justify-content-center">
-                            <x-reviews />
-                        </div>
-                    </div>
+            <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper row d-flex justify-content-center">
+                    <x-reviews />
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
 </x-main>

@@ -3,10 +3,11 @@
 namespace App\Http\Livewire;
 
 use App\Models\Ad;
-use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
 
 class AdCreateForm extends Component
 {
@@ -61,8 +62,14 @@ class AdCreateForm extends Component
 
         if(count($this->images)){
             foreach ($this->images as $image) {
-                $this->ad->images()->create(['path' => $image->store('images', 'public')]);
+              /*   $this->ad->images()->create(['path' => $image->store('images', 'public')]); */
+                $newFileName = "ads/{$this->ad->id}";
+                $newImage = $this->ad->images()->create(['path' => $image->store($newFileName, 'public')]);
+
+                dispatch(new ResizeImage($newImage->path, 300, 300));
             }
+
+            File::deleteDirectory(storage_path('app/livewire-tmp'));
         }
 
         session()->flash('success', 'Annuncio inserito! Sarà pubblicato dopo la revisione');

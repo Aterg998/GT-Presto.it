@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Image extends Model
 {
@@ -17,7 +18,7 @@ class Image extends Model
 
     public static function getUrlByFilePath($filePath, $w = null, $h = null) {
         if(!$w && !$h) {
-            return storage::url($filePath);
+            return Storage::url($filePath);
     }
 
     $path = dirname($filePath);

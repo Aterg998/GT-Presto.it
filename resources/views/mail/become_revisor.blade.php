@@ -18,7 +18,7 @@
             <img class="img-fluid"
                 src="{{asset('storage/img/marmotta-mail.jpeg')}}">
             
-                <a class="accenti presto position-absolute top-100 start-50 translate-middle-y" style="font-size:90px" href="{{ Route('homepage') }}">Presto<span style="color:#D2360F;">.</span></a>
+                <a class="accenti presto position-absolute top-100 start-50 translate-middle-y" style="font-size:90px" href="{{ Route('homepage') }}">Presto<span style="color:#D2360F;">.</span>it</a>
         </div>
         <br>
         <br>

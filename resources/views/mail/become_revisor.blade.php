@@ -28,6 +28,8 @@
             <p class="text-black">Nome: {{ $user->first_name }}</p>
             <p class="text-black">Cognome: {{ $user->last_name }}</p>
             <p class="text-black">Email: {{ $user->email }}</p>
+            <p class="text-black">Data di nascita: {{ $user->birth_date }}</p>
+            <p class="text-black">Indirizzo:{{ $user->country }} {{ $user->city }} {{ $user->zip_code }} {{ $user->address }}</p>
             <p class="text-black">Se vuoi renderlo una marmotta revisore clicca qui:</p>
             <a class="text-decoration-underline" style="color:#006243"
                 href="{{ route('make.revisor', compact('user')) }}">Rendi revisore</a>

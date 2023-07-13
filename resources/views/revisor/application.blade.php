@@ -18,22 +18,57 @@
         <div class="form-row">
             <div class=" form-group">
                 <label for="first_name" class="form-label accenti mt-2 mb-2">Nome</label>
-                <input type="text" class="form-control" required id="nome" name="first_name" value="{{old('first_name')}}">
+                <input type="text" class="form-control" required name="first_name" value="{{old('first_name')}}">
                 @error('first_name')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="last_name" class="form-label accenti mt-2 mb-2">Cognome</label>
-                <input type="text" class="form-control" required id="lastname"name="last_name" value="{{old('last_name')}}">
+                <input type="text" class="form-control" required name="last_name" value="{{old('last_name')}}">
                 @error('last_name')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
+                <label for="birth_date" class="form-label accenti mt-2 mb-2">Data di Nascita</label>
+                <input type="date" class="form-control" required id="lastname"name="birth_date" value="{{old('birth_date')}}">
+                @error('birth_date')
+                    <span class="error text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="email" class="form-label accenti mt-2 mb-2">Email</label>
-                <input type="text" class="form-control" required id="email" name="email" value="{{Auth::User()->email}}">
+                <input type="text" class="form-control" required name="email" value="{{Auth::User()->email}}">
                 @error('email')
+                    <span class="error text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label accenti mt-2 mb-2">Indirizzo</label>
+                <input type="text" class="form-control" required name="address" value="{{old('address')}}">
+                @error('address')
+                    <span class="error text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="city" class="form-label accenti mt-2 mb-2">Città</label>
+                <input type="text" class="form-control" required id="lastname"name="city" value="{{old('city')}}">
+                @error('city')
+                    <span class="error text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="zip_code" class="form-label accenti mt-2 mb-2">CAP</label>
+                <input type="text" class="form-control" required id="lastname"name="zip_code" value="{{old('zip_code')}}">
+                @error('zip_code')
+                    <span class="error text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="country" class="form-label accenti mt-2 mb-2">Nazione</label>
+                <input type="text" class="form-control" required id="lastname"name="country" value="{{old('country')}}">
+                @error('country')
                     <span class="error text-danger">{{ $message }}</span>
                 @enderror
             </div>

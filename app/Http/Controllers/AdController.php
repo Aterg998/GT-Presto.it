@@ -11,7 +11,7 @@ class AdController extends Controller
     {
         $categories = Category::all();
         $ads = Ad::where('is_accepted', true)->take(6)->get()->sortByDesc('created_at');
-        return view('ads.index', compact('ads'))->with(compact('categories'));
+        return view('ads.index', compact('ads', 'categories'));
     }
 
     public function create()

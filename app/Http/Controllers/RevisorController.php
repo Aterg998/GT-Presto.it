@@ -52,10 +52,16 @@ class RevisorController extends Controller
     public function send(Request $request, User $user) {
         $user->update([
             'first_name' => $request->first_name,
-            'last_name' => $request->last_name
+            'last_name' => $request->last_name,
+            'country' => $request->country,
+            'birth_date' => $request->birth_date,
+            'zip_code' => $request->zip_code,
+            'city' => $request->city,
+            'address' => $request->address,
         ]);
+        $user->save();
 
-        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+        Mail::to('admin@presto.it')->send(new BecomeRevisor($user));
         return redirect()->back()->with('message', 'Richiesta per diventare revisore inviata con successo');
     }
 }

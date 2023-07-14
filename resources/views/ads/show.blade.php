@@ -2,25 +2,25 @@
     <br>
 
     <div class="container d-flex justify-content-evenly m-5">
-            @if ($ad->images)
-                    <div class="carousel-inner" style="width: 20rem">
-                        @foreach ($ad->images as $image)
-                        <div class="carousel-item @if($loop->first) active @endif">
-                            <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="...">
-                        </div>                            
-                        @endforeach
-                    @else
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/id/237/300/300" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/id/410/300/300" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/id/101/300/300" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    @endif
+        <div class="carousel-inner" style="width: 20rem">
+        @if (!$ad->images->isEmpty())
+        @foreach ($ad->images as $image)
+            <div class="carousel-item @if($loop->first) active @endif">
+                <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="...">
+            </div>                            
+        @endforeach
+        @else
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/id/237/300/300" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/410/300/300" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/101/300/300" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        @endif
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

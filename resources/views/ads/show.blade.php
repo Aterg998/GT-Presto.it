@@ -33,7 +33,7 @@
                     <br>
                     <p class="text-black" style="line-height: 1rem"><span class="accenti">Utente:</span> {{ $ad->user->name }}</p>
                     <p class="text-black" style="line-height: 1rem"> <span class="accenti">Categoria:</span> {{ $ad->category->name }}</p>
-                    <p class="text-black" style="line-height: 1rem"> <span class="accenti">Prezzo:</span> {{$ad->price}}</p>
+                    <p class="text-black" style="line-height: 1rem"> <span class="accenti">Prezzo:</span> € {{number_format($ad->price, 2)}}</p>
                 </div>
             
                 {{-- se l'utente id che è loggato è lo stesso che ha creato l'annuncio --}}

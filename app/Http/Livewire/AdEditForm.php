@@ -13,14 +13,14 @@ class AdEditForm extends Component
 
     use WithFileUploads; 
 
-    public $title, $price, $description, $image, $category_id, $user_id; 
+    public $title, $price, $description, $category_id, $user_id; 
 
     public Ad $ad;
 
     protected $rules = [
-        'title' => 'required|min:10',
+        'title' => 'required|min:3',
         'price' => 'required',
-        'description' => 'required|min:10|max:500',
+        'description' => 'required|min:3|max:500',
         'category_id' => 'required'
     ];
 
@@ -29,7 +29,6 @@ class AdEditForm extends Component
         $this->title = $this->ad->title;
         $this->price = $this->ad->price;
         $this->description = $this->ad->description;
-        $this->image = $this->ad->image;
         $this->category_id = $this->ad->category_id;
         $this->user_id = $this->user_id;
     }
@@ -48,7 +47,6 @@ class AdEditForm extends Component
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'image' => $this->image,
             'category_id' => $this->category_id,
             'user_id' => $this->user_id=Auth::user()->id
         ]);

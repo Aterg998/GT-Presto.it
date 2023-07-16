@@ -17,7 +17,7 @@
           <a href="{{route('ads.show', $ad->id)}}" title="title" class="accenti2">{{$ad->title}}
           </a>
         </h4>
-        <p class="text-black" style="line-height: 1em"> <span class="accenti">{{__('messages.price')}}: </span> € {{$ad->price}}</p>
+        <p class="text-black" style="line-height: 1em"> <span class="accenti">{{__('messages.price')}}: </span> € {{number_format($ad->price, 2)}}</p>
         <p class="text-black" style="line-height: 1em"><span class="accenti">{{__('messages.description')}}: </span>{{$ad->description}}</p>
       </div>
     </div>

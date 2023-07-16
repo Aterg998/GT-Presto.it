@@ -55,11 +55,8 @@
             <span class="error text-danger">{{ $message }}</span>
         @enderror
     </div>
-    </div>
-
-    </div>
-    <br>
-    <div class="text-center m-3">
+   
+    <div class="text-center m-5">
         <button type="submit" class="btn btn-presto">Aggiorna</button>
     </div>
 </form>

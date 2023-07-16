@@ -11,6 +11,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@splidejs/splide": "^4.1.4",
         "bootstrap": "^5.3.0",
         "bootstrap-icons": "^1.10.5",
         "flag-icons": "^6.7.0"

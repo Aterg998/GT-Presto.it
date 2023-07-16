@@ -8,20 +8,13 @@
         </div>
 
 
+
+        <div class="mt-4 row">
         @if ($ad_to_check)
             {{-- Show annuncio da revisionare --}}
-            <div class="container d-flex justify-content-evenly m-5">
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators ">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    </div>
-                    @if ($ad_to_check->images)
+                <div id="show-carousel" class="carousel slide slide position-relative col-12 col-md-8 mb-3">
                     <div class="carousel-inner" style="width: 20rem">
+                        @if ($ad_to_check->images)
                         @foreach ($ad_to_check->images as $image)
                         <div class="carousel-item @if($loop->first) active @endif">
                             <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="...">
@@ -31,30 +24,23 @@
                         <div class="carousel-item active">
                             <img src="https://picsum.photos/id/237/300/300" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/id/410/300/300" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/id/101/300/300" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
                     @endif
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#show-carousel" data-bs-slide="next">
+                        <i class="fs-1 bi bi-arrow-right-square-fill accenti" style="right: 15rem"></i>
                         <span class="visually-hidden">Next</span>
                     </button>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#show-carousel" data-bs-slide="prev">
+                        <i class="fs-1 bi bi-arrow-left-square-fill accenti" style="left: 15rem"></i>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-start align-items-center col-12 col-md-4">
                     <div class="container m-3">
                         <div class="row">
-                            <div>
+                            <div class="m-3">
                                 <h2>{{ $ad_to_check->title }}</h2>
                                 <p class="text-black">{{ $ad_to_check->description }}</p>
                                 <br>
@@ -64,9 +50,9 @@
                                     {{ $ad_to_check->category->name }}</p>
                                 <p class="text-black" style="line-height: 1rem"> <span class="accenti">Prezzo:</span>
                                     {{ $ad_to_check->price }}</p>
-
+                                </div>
                                 {{-- Bottoni accetta e rifuta --}}
-                                <div class="row mt-5">
+                                <div class="row mt-2">
                                     <div class="col-12 col-md-6 d-flex justify-content-end">
                                         <form action="{{ route('revisor.accept_ad', ['ad' => $ad_to_check]) }}"
                                             method="POST">
@@ -85,13 +71,15 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
-                </div>
-            </div>
+
             </div>
         @endif
+        </div>
+
+
 
         @if (Auth::user()->last_ad_revised)
         <div class="d-flex justify-content-center m-5 pt-5">
@@ -103,6 +91,11 @@
         </div>
     @endif
 
+
+
+
+
+    
     </section>
 
 </x-main>

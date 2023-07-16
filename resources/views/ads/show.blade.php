@@ -1,11 +1,11 @@
 <x-main>
     <div class="mt-4 row">
-    <div id="show-carousel" class="carousel slide position-relative col-12 col-md-6">
-        <div class="container-fluid carousel-inner d-flex justify-content-center">
+    <div id="show-carousel" class="carousel slide position-relative col-12 col-md-8 mb-3">
+        <div class="container-fluid carousel-inner" style="width: 20rem">
             @if ($ad->images)
             @foreach ($ad->images as $image)
             <div class="carousel-item @if($loop->first) active @endif">
-                <img src="{{Storage::url($image->path)}}" style="width: auto!important" class="d-block w-100" alt="...">
+                <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="...">
             </div>                            
             @endforeach
             @else
@@ -15,19 +15,19 @@
             @endif   
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#show-carousel" data-bs-slide="prev">
-            <i class="fs-1 bi bi-arrow-left-square-fill accenti position-absolute" style="left: 150%"></i>
+            <i class="fs-1 bi bi-arrow-left-square-fill accenti position-absolute" style="left: 15rem"></i>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#show-carousel" data-bs-slide="next">
-            <i class="fs-1 bi bi-arrow-right-square-fill accenti position-absolute" style="right: 150%"></i>
+            <i class="fs-1 bi bi-arrow-right-square-fill accenti position-absolute" style="right: 15rem"></i>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
 
-    <div class="d-flex justify-content-start col-12 col-md-6">
+    <div class="d-flex justify-content-start align-items-center col-12 col-md-4">
         <div class="container m-3">
             <div class="row">
-                <div>
+                <div class="m-3">
                     <h2>{{ $ad->title }}</h2>
                     <p class="text-black">{{ $ad->description }}</p>
                     <br>
@@ -54,3 +54,5 @@
     </div>
     </div>
 </x-main>
+
+

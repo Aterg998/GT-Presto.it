@@ -15,7 +15,8 @@ class PageController extends Controller
 
         return view('homepage', [
             'categories' => $categories,
-            'ads' => $ads]);
+            'ads' => $ads
+        ]);
     }
 
     public function searchAds (Request $request)

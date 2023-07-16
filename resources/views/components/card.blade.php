@@ -1,7 +1,9 @@
 <div class="gy-4 portfolio-container m-5">
   <div class="portfolio-item filter-app">
-    <div class="portfolio-wrap">
-      <a class="btn btn-presto btn-sm text-violet position-absolute mt-3 ms-3 z-20 "></span> {{$ad->category->name}}</a>
+    <div class="portfolio-wrap position-relative">
+      <a class="btn btn-presto btn-sm text-violet position-absolute mt-3 ms-3 z-2" href="{{ Route('ads.search', ['searched' => strtolower($ad->category->name)]) }}">
+        </span> {{$ad->category->name}}
+      </a>
       <a href="{{route('ads.show', $ad->id)}}" data-gallery="portfolio-gallery-app" class="glightbox">
         <img src="
         @if (!$ad->images()->get()->isEmpty())

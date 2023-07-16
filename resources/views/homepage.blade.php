@@ -18,25 +18,24 @@
             </div>
         </div>
 
-
-        <x-box></x-box>
-
+        <x-box/>
     </section>
 
     <!-- End Hero Section -->
 
-    {{-- annunci aka ultimi aggiunti --}}
-
+    {{-- Ultimi aggiunti --}}
+    
 
     <section id="latest" class="bg-white">
         <div class="section-header">
             <h2>{{ __('messages.last_ads') }}</h2>
         </div>
+
         <div class="m-auto row container latest">
             @foreach ($ads as $ad)
-                <span class="col-12 col-md-4">
-                    <x-card :ad="$ad" />
-                </span>
+                <div class="col-12 col-md-4">
+                    <x-card :ad="$ad"/>
+                </div>
             @endforeach
         </div>
     </section>

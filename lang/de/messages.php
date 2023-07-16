@@ -24,4 +24,10 @@ return [
     'order' => 'Befehl',
     'search_ads' => 'Suchen Sie in den Anzeigen',
     'no_ads' => 'Es gibt keine Anzeigen für diese Suche. Versuchen Sie, die Parameter zu ändern.',
+    'title' => 'Titel',
+    'create_your_own_ad' => 'Erstellen Sie Ihre eigene Anzeige',
+    'select_category' => 'Bitte wählen Sie die Kategorie...',
+    'image' => "Immagine dell'articolo",
+    'image' => 'Foto des Artikels',
+    'save' => 'Speichern',
 ];

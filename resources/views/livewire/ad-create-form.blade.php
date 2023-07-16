@@ -13,19 +13,19 @@
     @endif
 
     <div class="text-center fw-bold accenti2 m-5">
-        <h2>Crea il tuo annuncio</h2>
+        <h2>{{ __('messages.create_your_own_ad') }}</h2>
     </div>
     
     <div class="form-row">
         <div class=" form-group">
-            <label for="title" class="form-label accenti mt-2 mb-2">Titolo</label>
+            <label for="title" class="form-label accenti mt-2 mb-2">{{ __('messages.title') }}</label>
             <input type="text" class="form-control" id="title" wire:model="title" value="{{old('title')}}">
             @error('title')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <label for="price" class="form-label accenti mt-2 mb-2">Prezzo</label>
+            <label for="price" class="form-label accenti mt-2 mb-2">{{ __('messages.price') }}</label>
             <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
                 wire:model="price" value="{{old('price')}}">
             @error('price')
@@ -33,16 +33,16 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="description" class="form-label accenti mt-2 mb-2">Descrizione</label>
+            <label for="description" class="form-label accenti mt-2 mb-2">{{ __('messages.description') }}</label>
             <textarea rows="5" class="form-control" id="description" wire:model="description" value="{{old('description')}}"></textarea>
             @error('description')
                 <span class="error text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class=" form-group">
-            <label for="description" class="form-label accenti mt-2 mb-2">Categoria</label>
+            <label for="description" class="form-label accenti mt-2 mb-2">{{ __('messages.category') }}</label>
             <select class="form-control" id="category_id" wire:model="category_id" value="{{old('category_id')}}" placeholder="Ciao">
-                <option value="">Seleziona la categoria...</option>
+                <option value="">{{ __('messages.select_category') }}</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group mt-3">
-            <label for="image" class="form-labe accenti mt-2 mb-2">Immagine dell'articolo</label>
+            <label for="image" class="form-labe accenti mt-2 mb-2">{{ __('messages.image') }}</label>
 
             <input class="form-control @error('temporary_images.*') is-invalid @enderror"  wire:model="temporary_images" type="file" name="images" multiple>
             @error('temporary_images.*')
@@ -79,6 +79,6 @@
     </div>
     <br>
     <div class="text-center m-4">
-        <button type="submit" class="btn btn-presto">Salva</button>
+        <button type="submit" class="btn btn-presto">{{ __('messages.save') }}</button>
     </div>
 </form>

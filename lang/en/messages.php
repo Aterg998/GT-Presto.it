@@ -24,4 +24,9 @@ return [
     'order' => 'Order',
     'search_ads' => 'Search in the ads',
     'no_ads' => 'There are no ads for this search. Try changing the parameters.',
+    'title' => 'Title',
+    'create_your_own_ad' => 'Create your own ad',
+    'select_category' => 'Please select the category...',
+    'image' => 'image of the item',
+    'save' => 'Save',
 ];

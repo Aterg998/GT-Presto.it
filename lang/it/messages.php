@@ -24,5 +24,9 @@ return [
     'order' => 'Ordina',
     'search_ads' => 'Cerca tra gli annunci',
     'no_ads' => 'Non ci sono annunci per questa ricerca. Prova a cambiare i parametri.',
-
+    'title' => 'Titolo',
+    'create_your_own_ad' => 'Crea il tuo annuncio',
+    'select_category' => 'Seleziona la categoria...',
+    'image' => "Immagine dell'articolo",
+    'save' => 'Salva',
 ];

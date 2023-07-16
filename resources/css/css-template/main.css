@@ -162,7 +162,7 @@ section {
 
 .scroll-top:hover {
   background: rgba(248, 90, 64, 0.8);
-  color: #fff;
+  color: #D2360F;
 }
 
 .scroll-top.active {
@@ -831,7 +831,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 a:hover {
-  color: var(--color-primary);
+  color: #cc6f58;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {

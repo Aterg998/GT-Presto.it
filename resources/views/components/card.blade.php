@@ -21,7 +21,7 @@
           <span class="accenti">{{__('messages.description')}}: </span>
           {{$ad->description}}
         </p>
-        <span class="text-black  border border-success rounded-5 p-2">€ {{$ad->price}}
+        <span class="text-black  border border-success rounded-5 p-2">€ {{number_format($ad->price, 2)}}
           <i class="fas fa-solar-panel"></i>
       </div>
     </div>

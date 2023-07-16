@@ -1,7 +1,7 @@
 <div class="gy-4 portfolio-container m-5">
   <div class="portfolio-item filter-app">
     <div class="portfolio-wrap position-relative">
-      <a class="btn btn-presto btn-sm text-violet position-absolute mt-3 ms-3 z-2" href="{{ Route('ads.search', ['searched' => strtolower($ad->category->name)]) }}">
+      <a class="btn btn-presto btn-sm position-absolute mt-3 ms-3 z-2" href="{{ Route('ads.search', ['searched' => strtolower($ad->category->name)]) }}">
         </span> {{$ad->category->name}}
       </a>
       <a href="{{route('ads.show', $ad->id)}}" data-gallery="portfolio-gallery-app" class="glightbox">
@@ -17,8 +17,12 @@
           <a href="{{route('ads.show', $ad->id)}}" title="title" class="accenti2">{{$ad->title}}
           </a>
         </h4>
-        <p class="text-black" style="line-height: 1em"> <span class="accenti">{{__('messages.price')}}: </span> € {{$ad->price}}</p>
-        <p class="text-black" style="line-height: 1em"><span class="accenti">{{__('messages.description')}}: </span>{{$ad->description}}</p>
+        <p class="text-black mb-3">
+          <span class="accenti">{{__('messages.description')}}: </span>
+          {{$ad->description}}
+        </p>
+        <span class="text-black  border border-success rounded-5 p-2">€ {{$ad->price}}
+          <i class="fas fa-solar-panel"></i>
       </div>
     </div>
   </div>

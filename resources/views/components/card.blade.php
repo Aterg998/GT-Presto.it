@@ -13,16 +13,13 @@
         @endif" class="img-fluid" alt="">
       </a>
       <div class="portfolio-info">
-        <h4 class="mt-3">
+        <h3 class="mt-3 text-start">
           <a href="{{route('ads.show', $ad->id)}}" title="title" class="accenti2">{{$ad->title}}
           </a>
-        </h4>
-        <p class="text-black mb-3">
-          <span class="accenti">{{__('messages.description')}}: </span>
-          {{$ad->description}}
-        </p>
-        <span class="text-black  border border-success rounded-5 p-2">€ {{number_format($ad->price, 2)}}
-          <i class="fas fa-solar-panel"></i>
+        </h3>
+          {{-- <h5 class="accenti text-start card-text">{{__('messages.description')}}: </h5> --}}
+          <p class="text-black mb-3 card-text text-start">{{$ad->description}}</p>
+        <span class="text-black text-center border border-success rounded-5 mt-3 p-2">€ {{number_format($ad->price, 2)}} </span>
       </div>
     </div>
   </div>

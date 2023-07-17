@@ -29,4 +29,6 @@ return [
     'select_category' => 'Seleziona la categoria...',
     'image' => "Immagine dell'articolo",
     'save' => 'Salva',
+    'update' => 'Aggiorna',
+    'Edit_your_ad' => 'Modifica il tuo annuncio',
 ];

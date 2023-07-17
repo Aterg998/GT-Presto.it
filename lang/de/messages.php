@@ -30,4 +30,6 @@ return [
     'image' => "Immagine dell'articolo",
     'image' => 'Foto des Artikels',
     'save' => 'Speichern',
+    'update' => 'Aktualisiert',
+    'Edit_your_ad' => 'Bearbeiten Sie Ihre Anzeige',
 ];

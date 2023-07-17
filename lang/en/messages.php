@@ -29,4 +29,6 @@ return [
     'select_category' => 'Please select the category...',
     'image' => 'image of the item',
     'save' => 'Save',
+    'update' => 'Update',
+    'Edit_your_ad' => 'Edit your ad',
 ];

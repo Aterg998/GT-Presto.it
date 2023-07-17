@@ -20,7 +20,7 @@
                             <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="...">
                         </div>                            
                         @endforeach
-                    @else
+                        @else
                         <div class="carousel-item active">
                             <img src="https://picsum.photos/id/237/300/300" class="d-block w-100" alt="...">
                         </div>

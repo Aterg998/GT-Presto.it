@@ -51,15 +51,15 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $violence = $safe->getViolence();
         $racy = $safe->getRacy();
 
-        $likelihoocName = [
+        $likelihoodName = [
             'text-secondary fas fa-circle', 'text-success fas fa-circle', 'text-success fas fa-circle', 'text-warning fas fa-cicle', 'text-warning fas fa-circle', 'text-danger fas fa-circle'
         ];
         
-        $i->adult = $likelihoocName[$adult];
-        $i->medical = $likelihoocName[$medical];
-        $i->spoof = $likelihoocName[$spoof];
-        $i->violence = $likelihoocName[$violence];
-        $i->racy = $likelihoocName[$racy];
+        $i->adult = $likelihoodName[$adult];
+        $i->medical = $likelihoodName[$medical];
+        $i->spoof = $likelihoodName[$spoof];
+        $i->violence = $likelihoodName[$violence];
+        $i->racy = $likelihoodName[$racy];
 
         $i->save();
     }

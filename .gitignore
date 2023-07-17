@@ -20,3 +20,4 @@ yarn-error.log
 /storage/*.index
 /storage/articles.index-shm
 /storage/articles.index-wal
+/resources/views/mail/become_revisor_bis.blade.php

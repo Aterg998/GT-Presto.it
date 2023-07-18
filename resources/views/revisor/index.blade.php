@@ -14,43 +14,64 @@
         @if ($ad_to_check)
         <div class="m-4 row">
 
-            <div id="show-carousel" class="carousel slide col-12 col-md-8 mb-3">
+            <div id="show-carousel" class="carousel slide col-12 col-md-8 mb-3 position-relative">
                 <div class="carousel-inner">
                     @if ($ad_to_check->images)
                     @foreach ($ad_to_check->images as $image)
                     <div class="carousel-item @if($loop->first) active @endif">
-                        <img src="{{Storage::url($image->path)}}" class="rounded-3 d-block mx-auto w-50" alt="...">
-                        
-                        <div class="m-4">
-                            <table class="table d-flex justify-content-center table-success">
-                                <tbody>
-                                    <tr>
-                                        <td><p class="fs-3 accenti2">Revisione</p></td>
-                                        <td><p class="fs-3 accenti2">Immagini</p></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-end">Adulti:</td>
-                                        <td><span class="{{$image->adult}}"></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-end">Satira:</td>
-                                        <td><span class="{{$image->spoof}}"></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-end">Medicina:</td>
-                                        <td><span class="{{$image->medical}}"></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-end">Violenza:</td>
-                                        <td><span class="{{$image->violence}}"></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-end">VM18:</td>
-                                        <td><span class="{{$image->racy}}"></span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> 
+                        <img src="{{Storage::url($image->path)}}" class="rounded-5 d-block m-auto p-4 w-50" alt="...">
+                        <div class="container row rounded-4 ps-5">
+                            <div class="py-4 col rounded-start-4" style="background-color: #00624340;">
+                                <table class="d-flex justify-content-center">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"><p class="fs-3 accenti2">Revisione</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">Adulti:</td>
+                                            <td><span class="{{$image->adult}}"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">Satira:</td>
+                                            <td><span class="{{$image->spoof}}"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">Medicina:</td>
+                                            <td><span class="{{$image->medical}}"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">Violenza:</td>
+                                            <td><span class="{{$image->violence}}"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">VM18:</td>
+                                            <td><span class="{{$image->racy}}"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> 
+                            <div class="py-4 col rounded-end-4" style="background-color: #00624340;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><p class="fs-3 accenti2">Tags</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">
+                                                @if ($image->labels)
+                                                <p>
+                                                @foreach ($image->labels as $label)
+                                                    {{$label}},
+                                                @endforeach 
+                                                </p>                                       
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>                           
                     @endforeach
                     @else

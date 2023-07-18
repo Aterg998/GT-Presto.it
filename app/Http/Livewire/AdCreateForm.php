@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
 use App\Jobs\RemoveFaces;
 use Livewire\Component;
@@ -70,7 +71,8 @@ class AdCreateForm extends Component
 
                 RemoveFaces::withChain([
                     new ResizeImage($newImage->path, 300, 300),
-                    new GoogleVisionSafeSearch($newImage->id)
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id)
                 ])->dispatch($newImage->id);
             }
 

@@ -31,19 +31,19 @@
                     <h2>{{ $ad->title }}</h2>
                     <p class="text-black">{{ $ad->description }}</p>
                     <br>
-                    <p class="text-black" style="line-height: 1rem"><span class="accenti">Utente:</span> {{ $ad->user->name }}</p>
-                    <p class="text-black" style="line-height: 1rem"> <span class="accenti">Categoria:</span> {{ $ad->category->name }}</p>
-                    <p class="text-black" style="line-height: 1rem"> <span class="accenti">Prezzo:</span> € {{number_format($ad->price, 2)}}</p>
+                    <p class="text-black" style="line-height: 1rem"><span class="accenti">{{ __('messages.user') }}:</span> {{ $ad->user->name }}</p>
+                    <p class="text-black" style="line-height: 1rem"> <span class="accenti">{{ __('messages.category') }}:</span> {{ $ad->category->name }}</p>
+                    <p class="text-black" style="line-height: 1rem"> <span class="accenti">{{ __('messages.price') }}:</span> € {{number_format($ad->price, 2)}}</p>
                 </div>
             
                 {{-- se l'utente id che è loggato è lo stesso che ha creato l'annuncio --}}
             @if ($ad->user_id == Auth::user()->id)
                 <div class="d-flex mt-3">
-                    <a class="btn btn-presto" href="{{ route('ads.edit', ['ad' => $ad['id']]) }}">Modifica</a>
+                    <a class="btn btn-presto" href="{{ route('ads.edit', ['ad' => $ad['id']]) }}">{{ __('messages.edit') }}</a>
                     <form action="{{ route('ads.delete', ['ad' => $ad['id']]) }}" method='POST'>
                         @csrf
                         @method('DELETE')
-                    <button class="btn btn-presto ms-3">Elimina</button>
+                    <button class="btn btn-presto ms-3">{{ __('messages.delete') }}</button>
                     </form>
                 </div>
             @else

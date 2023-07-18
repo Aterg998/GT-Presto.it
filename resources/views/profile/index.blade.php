@@ -5,7 +5,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>Articoli</h2>
+                <h2>{{ __('messages.articles') }}</h2>
 
                 {{-- <livewire:ad-index-list/> --}}
 
@@ -17,7 +17,7 @@
                     @empty
                         <div class="col-12">
                             <div class="alert alert-warning py-3 shadow">
-                                <p class="lead">Non ci sono annunci per questa ricerca. Prova a cambiare i parametri.
+                                <p class="lead">{{ __('messages.no_ads') }}
                                 </p>
                             </div>
                         </div>

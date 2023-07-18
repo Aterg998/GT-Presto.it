@@ -31,5 +31,13 @@ return [
     'image' => 'Foto des Artikels',
     'save' => 'Speichern',
     'update' => 'Aktualisiert',
-    'Edit_your_ad' => 'Bearbeiten Sie Ihre Anzeige',
-];
+    'edit_your_ad' => 'Bearbeiten Sie Ihre Anzeige',
+    'user'=> 'Nutzer',
+    'edit'=> 'Bearbeiten',
+    'delete'=> 'Löschen',
+    'top_sellers'=> 'Bestseller',
+    'the_latest_arrivals'=> 'Die Neuheiten',
+    'sell'=> 'Verkaufe',
+    'your_ads'=> 'Ihre Anzeigen',
+    'review_area'=> 'Reviergebiet',
+];  

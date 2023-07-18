@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('storage\img\Ecommerce.png') }}" class="img-fluid" alt=""
+                    <img src="{{ asset('storage\img\Home.png') }}" class="img-fluid" alt=""
                         data-aos="zoom-out" data-aos-delay="100">
                 </div>
             </div>

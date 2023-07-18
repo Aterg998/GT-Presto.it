@@ -20,13 +20,13 @@
                     @foreach ($ad_to_check->images as $image)
                     <div class="carousel-item @if($loop->first) active @endif">
                         <img src="{{Storage::url($image->path)}}" class="rounded-3 d-block mx-auto w-75" alt="...">
-                        <div class="card-body text-center mt-4">
+                        <div class="card-body text-center ps-5 ms-5 mt-4">
                             <h2 class="accenti2">Revisione Immagini</h2>
-                            <p>Adulti: <span class="{{$image->adult}}"></span></p>
-                            <p>Satira: <span class="{{$image->spoof}}"></span></p>
-                            <p>Medicina: <span class="{{$image->medical}}"></span></p>
-                            <p>Violenza: <span class="{{$image->violence}}"></span></p>
-                            <p>VM18: <span class="{{$image->racy}}"></span></p>
+                            <p class="text-black">Adulti: <span class="{{$image->adult}}"></span></p>
+                            <p class="text-black">Satira: <span class="{{$image->spoof}}"></span></p>
+                            <p class="text-black">Medicina: <span class="{{$image->medical}}"></span></p>
+                            <p class="text-black">Violenza: <span class="{{$image->violence}}"></span></p>
+                            <p class="text-black">VM18: <span class="{{$image->racy}}"></span></p>
                         </div> 
                     </div>                           
                     @endforeach

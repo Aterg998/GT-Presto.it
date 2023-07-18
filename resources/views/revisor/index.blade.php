@@ -19,14 +19,37 @@
                     @if ($ad_to_check->images)
                     @foreach ($ad_to_check->images as $image)
                     <div class="carousel-item @if($loop->first) active @endif">
-                        <img src="{{Storage::url($image->path)}}" class="rounded-3 d-block mx-auto w-75" alt="...">
-                        <div class="card-body text-center ps-5 ms-5 mt-4">
-                            <h2 class="accenti2">Revisione Immagini</h2>
-                            <p class="text-black">Adulti: <span class="{{$image->adult}}"></span></p>
-                            <p class="text-black">Satira: <span class="{{$image->spoof}}"></span></p>
-                            <p class="text-black">Medicina: <span class="{{$image->medical}}"></span></p>
-                            <p class="text-black">Violenza: <span class="{{$image->violence}}"></span></p>
-                            <p class="text-black">VM18: <span class="{{$image->racy}}"></span></p>
+                        <img src="{{Storage::url($image->path)}}" class="rounded-3 d-block mx-auto w-50" alt="...">
+                        
+                        <div class="m-4">
+                            <table class="table d-flex justify-content-center table-success">
+                                <tbody>
+                                    <tr>
+                                        <td><p class="fs-3 accenti2">Revisione</p></td>
+                                        <td><p class="fs-3 accenti2">Immagini</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end">Adulti:</td>
+                                        <td><span class="{{$image->adult}}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end">Satira:</td>
+                                        <td><span class="{{$image->spoof}}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end">Medicina:</td>
+                                        <td><span class="{{$image->medical}}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end">Violenza:</td>
+                                        <td><span class="{{$image->violence}}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end">VM18:</td>
+                                        <td><span class="{{$image->racy}}"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div> 
                     </div>                           
                     @endforeach
@@ -41,7 +64,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
                 <button class="carousel-control-prev" type="button" data-bs-target="#show-carousel" data-bs-slide="prev">
-                    <i class="fs-1 bi bi-arrow-left-square-fill accenti" style="left: 15rem"></i>
+                    <i class="fs-1 bi bi-arrow-left-square-fill accenti" style="left: 15rem;"></i>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 
@@ -60,7 +83,7 @@
                             <p class="text-black" style="line-height: 1rem"> <span class="accenti">Categoria:</span>
                                 {{ $ad_to_check->category->name }}</p>
                             <p class="text-black" style="line-height: 1rem"> <span class="accenti">Prezzo:</span>
-                                {{ $ad_to_check->price }}</p>
+                                € {{number_format($ad_to_check->price, 2)}}</p>
                             </div>
                             {{-- Bottoni accetta e rifuta --}}
                             <div class="row mt-2">

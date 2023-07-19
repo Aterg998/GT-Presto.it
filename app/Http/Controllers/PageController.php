@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -34,6 +35,37 @@ class PageController extends Controller
     public function setLanguage($lang)
     {
         session()->put('locale', $lang);
+
+        $jsonFile = base_path('storage\app\public\categories.json');
+        $jsonContent = file_get_contents($jsonFile);
+        $data = json_decode($jsonContent, true);
+
+        switch ($lang) {
+            case "it":
+                for ($i = 0; $i < 10; $i++) {
+                    DB::table('categories')
+                        ->where('id', $i)
+                        ->update(['name' => $data[0][$i]]);
+                }
+                break;
+            case "gb":
+                for ($i = 0; $i < 10; $i++) {
+                    DB::table('categories')
+                        ->where('id', $i)
+                        ->update(['name' => $data[1][$i]]);
+                }
+                break;
+            case "de":
+                for ($i = 0; $i < 10; $i++) {
+                    DB::table('categories')
+                        ->where('id', $i)
+                        ->update(['name' => $data[2][$i]]);
+                }
+                break;
+            default:
+                break;
+        }
+
         return redirect()->back();
     }
 }

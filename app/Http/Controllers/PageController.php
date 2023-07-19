@@ -23,10 +23,10 @@ class PageController extends Controller
     public function searchAds (Request $request)
     {
         $categories = Category::all();
-        $ads = Ad::search($request->searched)->paginate(10);
+        $ads = Ad::search($request->searched)->where('is_accepted', true)->paginate(9);
 
         if(!$request->searched){
-            $ads = Ad::all();
+            $ads = Ad::where('is_accepted', true)->take(9)->get()->sortByDesc('created_at');
         }
 
         return view('ads.index', compact('ads'))->with(compact('categories'));
@@ -58,7 +58,7 @@ class PageController extends Controller
             case "de":
                 for ($i = 0; $i < 10; $i++) {
                     DB::table('categories')
-                        ->where('id', $i+1)
+                        ->where('id', $i)
                         ->update(['name' => $data[2][$i]]);
                 }
                 break;

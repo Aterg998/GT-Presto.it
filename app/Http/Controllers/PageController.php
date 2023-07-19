@@ -36,7 +36,7 @@ class PageController extends Controller
     {
         session()->put('locale', $lang);
 
-        $jsonFile = base_path('storage\app\public\categories.json');
+        $jsonFile = base_path('storage/app/public/categories.json');
         $jsonContent = file_get_contents($jsonFile);
         $data = json_decode($jsonContent, true);
 

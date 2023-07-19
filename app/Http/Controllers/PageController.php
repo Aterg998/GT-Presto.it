@@ -44,21 +44,21 @@ class PageController extends Controller
             case "it":
                 for ($i = 0; $i < 10; $i++) {
                     DB::table('categories')
-                        ->where('id', $i)
+                        ->where('id', $i+1)
                         ->update(['name' => $data[0][$i]]);
                 }
                 break;
             case "gb":
                 for ($i = 0; $i < 10; $i++) {
                     DB::table('categories')
-                        ->where('id', $i)
+                        ->where('id', $i+1)
                         ->update(['name' => $data[1][$i]]);
                 }
                 break;
             case "de":
                 for ($i = 0; $i < 10; $i++) {
                     DB::table('categories')
-                        ->where('id', $i)
+                        ->where('id', $i+1)
                         ->update(['name' => $data[2][$i]]);
                 }
                 break;

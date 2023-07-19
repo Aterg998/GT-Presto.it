@@ -29,6 +29,36 @@ class PageController extends Controller
             $ads = Ad::where('is_accepted', true)->take(9)->get()->sortByDesc('created_at');
         }
 
+        switch ($request->orderBy) {
+            case 'date_desc':
+            case 'none':
+                if ($request->category == "none") {
+                    $ads = Ad::where('is_accepted', true)->take(9)->get()->sortByDesc('created_at');
+                }
+                else {
+                    $ads = Ad::where([
+                        ['is_accepted', true],
+                        ['category_id', $request->category]
+                    ])->take(9)->get()->sortByDesc('created_at');
+                }
+                break;
+
+            case 'date_asc':
+                if ($request->category == "none") {
+                    $ads = Ad::where('is_accepted', true)->take(9)->get()->sortBy('created_at');
+                }
+                else {                    
+                    $ads = Ad::where([
+                        ['is_accepted', true],
+                        ['category_id', $request->category]
+                    ])->take(9)->get()->sortBy('created_at');
+                }
+                break;
+
+            default:
+                break;
+        }
+
         return view('ads.index', compact('ads'))->with(compact('categories'));
     }
 

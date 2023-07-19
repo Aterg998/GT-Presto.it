@@ -10,13 +10,13 @@
                     <form action="{{ route('ads.search') }}" method="GET" class="d-flex mt-2">
 
                         <select class="rounded-3 p-1 border-white mt-2" name="orderBy">
-                            <option value="none">- {{ __('messages.order') }} -</option>
+                            <option value = "none">- {{ __('messages.order') }} -</option>
                             <option value="date_desc">Più recente</option>
                             <option value="date_asc">Meno recente</option>
                         </select>
 
                         <select class="rounded-3 p-1 border-white mx-4 mt-2" name="category">
-                            <option value="none">- {{ __('messages.category') }} -</option>
+                            <option value = "none">- {{ __('messages.category') }} -</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach

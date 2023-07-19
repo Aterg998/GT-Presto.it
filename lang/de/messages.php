@@ -40,4 +40,13 @@ return [
     'sell'=> 'Verkaufe',
     'your_ads'=> 'Ihre Anzeigen',
     'review_area'=> 'Reviergebiet',
+    'first name' => 'Vorname',
+    'last name' => 'Nachname',
+    'date of birth' => 'Geburtsdatum',
+    'address' => 'Adresse',
+    'city' => 'Stadt',
+    'zip_code' => 'PLZ',
+    'country' => 'Land',
+    'enter your data to apply' => 'Geben Sie zur Bewerbung Ihre Daten ein',
+    'Submit Application' => 'Bewerbung einreichen',
 ];  

@@ -39,4 +39,13 @@ return [
     'sell'=> 'Sell',
     'your_ads'=> 'Your Ads',
     'review_area'=> 'Review Area',
+    'first name' => 'First Name',
+    'last name' => 'Last Name',
+    'date of birth' => 'Date of Birth',
+    'address' => 'Address',
+    'city' => 'City',
+    'zip_code' => 'ZIP',
+    'country' => 'Country',
+    'enter your data to apply' => 'Enter your data to apply',
+    'submit application' => 'Submit Application',
 ];

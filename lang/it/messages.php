@@ -39,4 +39,13 @@ return [
     'sell'=> 'Vendi qualcosa',
     'your_ads'=> 'i tuoi annunci',
     'review_area'=> 'Zona Revisore',
+    'first name' => 'Nome',
+    'last name' => 'Cognome',
+    'date of birth' => 'Data di Nascita',
+    'address' => 'Indirizzo',
+    'city' => 'Città',
+    'zip_code' => 'CAP',
+    'country' => 'Nazione',
+    'enter your data to apply' => 'Inserisci i tuoi dati per la candidatura',
+    'submit application' => 'Invia Candidatura',
 ];

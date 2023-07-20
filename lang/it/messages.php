@@ -37,7 +37,7 @@ return [
     'top_sellers'=> 'I più venduti',
     'the_latest_arrivals'=> 'Gli ultimi arrivi',
     'sell'=> 'Vendi qualcosa',
-    'your_ads'=> 'i tuoi annunci',
+    'your_ads'=> 'I tuoi annunci',
     'review_area'=> 'Zona Revisore',
     'first name' => 'Nome',
     'last name' => 'Cognome',

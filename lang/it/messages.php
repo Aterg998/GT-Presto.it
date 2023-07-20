@@ -58,4 +58,5 @@ return [
     'fashion' => 'Moda',
     'motors' => 'Motori',
     'sport' => 'Sport',
+    'buy' => 'Contatta Venditore'
 ];

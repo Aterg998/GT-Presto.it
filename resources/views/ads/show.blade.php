@@ -34,6 +34,7 @@
                     <p class="text-black" style="line-height: 1rem"><span class="accenti">{{ __('messages.user') }}:</span> {{ $ad->user->name }}</p>
                     <p class="text-black" style="line-height: 1rem"> <span class="accenti">{{ __('messages.category') }}:</span> {{ $ad->category->name }}</p>
                     <p class="text-black" style="line-height: 1rem"> <span class="accenti">{{ __('messages.price') }}:</span> € {{number_format($ad->price, 2)}}</p>
+                    <button class="btn btn-presto accenti mx-2" >{{__('messages.buy')}}</button>
                 </div>
             
             {{-- se l'utente id che è loggato è lo stesso che ha creato l'annuncio --}}

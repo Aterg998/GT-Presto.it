@@ -57,5 +57,6 @@ return [
     'gaming' => 'Gaming',
     'fashion' => 'Fashion',
     'motors' => 'Motors',
-    'sport' => 'Sport',
+    'sport' => 'Sport',    
+    'buy' => 'Contact Seller'
 ];

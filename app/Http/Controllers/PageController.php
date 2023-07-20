@@ -54,6 +54,30 @@ class PageController extends Controller
                     ])->take(9)->get()->sortBy('created_at');
                 }
                 break;
+            
+            case 'price_desc':
+                if ($request->category == "none") {
+                    $ads = Ad::where('is_accepted', true)->take(9)->get()->sortByDesc('price');
+                }
+                else {                    
+                    $ads = Ad::where([
+                        ['is_accepted', true],
+                        ['category_id', $request->category]
+                    ])->take(9)->get()->sortByDesc('price');
+                }
+                break;
+            
+            case 'price_asc':
+                if ($request->category == "none") {
+                    $ads = Ad::where('is_accepted', true)->take(9)->get()->sortBy('price');
+                }
+                else {                    
+                    $ads = Ad::where([
+                        ['is_accepted', true],
+                        ['category_id', $request->category]
+                    ])->take(9)->get()->sortBy('price');
+                }
+                break;
 
             default:
                 break;

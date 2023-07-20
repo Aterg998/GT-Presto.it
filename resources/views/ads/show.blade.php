@@ -34,7 +34,7 @@
                     <p class="text-black" style="line-height: 1rem"><span class="accenti">{{ __('messages.user') }}:</span> {{ $ad->user->name }}</p>
                     <p class="text-black" style="line-height: 1rem"> <span class="accenti">{{ __('messages.category') }}:</span> {{ $ad->category->name }}</p>
                     <p class="text-black" style="line-height: 1rem"> <span class="accenti">{{ __('messages.price') }}:</span> € {{number_format($ad->price, 2)}}</p>
-                    <button class="btn btn-presto accenti mx-2" >{{__('messages.buy')}}</button>
+                    <button data-bs-toggle="modal" data-bs-target="#notYetModal" class="btn btn-presto accenti mx-2" >{{__('messages.buy')}}</button>
                 </div>
             
             {{-- se l'utente id che è loggato è lo stesso che ha creato l'annuncio --}}
@@ -55,6 +55,23 @@
 
     </div>
     </div>
+
+    <div class="modal fade" id="notYetModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                Funzione non ancora disponibile!
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://i.headtopics.com/images/2020/7/14/repubblica/mongolia-caccia-e-poi-mangia-una-marmotta-adolescente-muore-di-peste-bubbonica-1283145254904803329.webp" class="img-fluid">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </x-main>
 
 
